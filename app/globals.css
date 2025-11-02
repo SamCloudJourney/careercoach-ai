@@ -31,3 +31,12 @@ input, textarea {
   background: #0f131a; color: var(--text); padding: 10px; margin-top: 8px;
 }
 textarea { min-height: 120px; }
+
+/* new animation classes for advanced motion */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
