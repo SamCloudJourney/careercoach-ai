@@ -24,11 +24,17 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-black px-6 py-20 text-white">
-      {/* Decorative blurred background */}
+      {/* Decorative spinning gradient */}
       <div className="absolute top-0 left-1/2 w-[120%] h-[120%] -translate-x-1/2 -translate-y-1/4 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-fuchsia-500/20 to-purple-500/30 rounded-full blur-3xl opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-fuchsia-500/20 to-purple-500/30 rounded-full blur-3xl opacity-40 animate-spin-slow"></div>
       </div>
-
+      {/* Additional floating gradient element */}
+      <motion.div
+        className="absolute -bottom-40 -right-40 w-[80rem] h-[80rem] bg-gradient-to-br from-purple-500/20 via-cyan-500/20 to-pink-500/20 rounded-full blur-3xl opacity-20 animate-spin-slow"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 3 }}
+      />
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -63,9 +69,10 @@ export default function Home() {
             key={i}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05, y: -4 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
             viewport={{ once: true }}
-            className="p-6 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-md"
+            className="p-6 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-md hover:shadow-lg transition-transform"
           >
             <div className="text-4xl mb-4">{f.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
