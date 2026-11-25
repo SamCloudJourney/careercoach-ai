@@ -5,79 +5,79 @@ Sizes count product source only (tests excluded). **Δ files** = product files t
 
 Known public CVEs are listed to point at bug *classes*. A re-report of a known issue is out of scope; a variant that bypasses its fix is not.
 
-| Area | Path (under `src/vmr/<ver>/src/`) | net10.0 files/LOC | net11.0 files/LOC | Δ files | Bug classes | Lab coverage | Public history |
-|---|---|---|---|---|---|---|---|
-| Kestrel HTTP/1.1 parser | `aspnetcore/src/Servers/Kestrel/Core/src/Internal/Http` | 46 / 27,553 | 47 / 28,039 | 15 | request smuggling, header/target parsing, chunked framing, limits | 🟢 labctl http1 (46 probes) | CVE-2025-55315 (chunk-extension smuggling) |
-| Kestrel HTTP/2 | `aspnetcore/src/Servers/Kestrel/Core/src/Internal/Http2` | 14 / 5,337 | 14 / 5,380 | 3 | stream lifecycle, flow control, header validation, floods | 🟢 labctl http2 (36 probes) | CVE-2023-44487 (Rapid Reset) |
-| Kestrel HTTP/3 | `aspnetcore/src/Servers/Kestrel/Core/src/Internal/Http3` | 33 / 5,364 | 33 / 5,401 | 5 | stream/connection lifetime (use-after-free class), QPACK | ⚪ none yet (needs QUIC + TLS listener) | CVE-2024-35264, CVE-2024-38229 (HTTP/3 RCE) |
-| HPACK / QPACK (shared) | `aspnetcore/src/Shared/runtime/Http2/Hpack` | 13 / 2,911 | 13 / 2,917 | 2 | decoder state, dynamic table, integer overflow | 🟢 labctl http2 hpack-* probes |  |
-| QPACK (shared) | `aspnetcore/src/Shared/runtime/Http3/QPack` | 7 / 1,456 | 7 / 1,474 | 2 | decoder state, static/dynamic table | ⚪ none yet |  |
-| QUIC transport | `aspnetcore/src/Servers/Kestrel/Transport.Quic` | 11 / 1,774 | 11 / 1,773 | 4 | connection/stream lifetime over msquic | ⚪ none yet |  |
-| HTTP.sys server (Windows) | `aspnetcore/src/Servers/HttpSys` | 71 / 9,978 | 73 / 11,287 | 34 | native interop, request queue, auth | ⚪ Windows only |  |
-| IIS module ANCM (Windows, native C++) | `aspnetcore/src/Servers/IIS/AspNetCoreModuleV2` | 186 / 32,730 | 187 / 32,956 | 22 | native memory safety, config parsing | ⚪ Windows only |  |
-| SignalR hubs | `aspnetcore/src/SignalR/server/Core` | 74 / 7,696 | 74 / 8,206 | 16 | hub method authZ, invocation binding, message limits | 🟢 labctl signalr (9 probes) |  |
-| SignalR MessagePack protocol | `aspnetcore/src/SignalR/common/Protocols.MessagePack` | 5 / 946 | 5 / 946 | 0 | binary deserialization | ⚪ none yet |  |
-| Blazor Server circuits | `aspnetcore/src/Components/Server` | 64 / 7,676 | 66 / 7,949 | 25 | circuit state, JS interop, render batch acks, event dispatch authZ | 🟢 template audit (blazor) |  |
-| Blazor SSR / forms | `aspnetcore/src/Components/Endpoints` | 138 / 10,500 | 177 / 14,751 | 42 | form mapping, antiforgery, enhanced navigation | 🟢 template audit (blazor) |  |
-| Blazor WebAssembly | `aspnetcore/src/Components/WebAssembly` | 113 / 9,223 | 114 / 24,390 | 56 | boot resources, auth state | 🟢 template audit (blazorwasm) |  |
-| ASP.NET Core Identity | `aspnetcore/src/Identity` | 335 / 98,488 | 335 / 98,582 | 87 | lockout, 2FA, token providers, passkeys, API endpoints | 🟢 template audit (webapp --auth Individual) |  |
-| JWT bearer | `aspnetcore/src/Security/Authentication/JwtBearer` | 24 / 1,432 | 24 / 1,433 | 5 | token validation configuration, event handling | 🟢 labctl auth jwt.* (16 probes) |  |
-| Cookie authentication | `aspnetcore/src/Security/Authentication/Cookies` | 20 / 1,590 | 20 / 1,596 | 5 | ticket protection, sliding expiry, chunking | 🟢 labctl auth path/cookie probes |  |
-| OpenID Connect | `aspnetcore/src/Security/Authentication/OpenIdConnect` | 26 / 3,706 | 26 / 3,733 | 10 | state/nonce, correlation, response mode | ⚪ none yet |  |
-| Negotiate / Kerberos | `aspnetcore/src/Security/Authentication/Negotiate` | 20 / 1,617 | 21 / 1,687 | 11 | connection-level auth persistence | ⚪ none yet |  |
-| Authorization | `aspnetcore/src/Security/Authorization` | 49 / 3,113 | 49 / 3,213 | 15 | policy evaluation, endpoint metadata | 🟢 labctl auth path.* (66 probes) |  |
-| Antiforgery | `aspnetcore/src/Antiforgery` | 29 / 2,233 | 29 / 2,573 | 20 | token binding, content-type gating | 🟢 labctl auth csrf.* (7 probes) |  |
-| Data Protection | `aspnetcore/src/DataProtection` | 197 / 16,927 | 202 / 17,896 | 41 | key ring, payload format, key escrow | ⚪ none yet |  |
-| Static files | `aspnetcore/src/Middleware/StaticFiles` | 25 / 2,500 | 25 / 2,500 | 3 | path traversal, range, content-type | 🟢 labctl auth static.* (13 probes) |  |
-| CORS | `aspnetcore/src/Middleware/CORS` | 22 / 1,648 | 22 / 1,648 | 2 | origin matching, preflight | ⚪ none yet |  |
-| Forwarded headers | `aspnetcore/src/Middleware/HttpOverrides` | 17 / 1,481 | 17 / 1,493 | 5 | proxy trust, scheme/host spoofing | ⚪ none yet |  |
-| URL rewrite | `aspnetcore/src/Middleware/Rewrite` | 104 / 5,197 | 105 / 5,238 | 9 | regex rules, open redirect | ⚪ none yet |  |
-| Rate limiting | `aspnetcore/src/Middleware/RateLimiting` | 20 / 1,403 | 20 / 1,403 | 3 | partition keys, bypass | ⚪ none yet |  |
-| Output caching | `aspnetcore/src/Middleware/OutputCaching` | 53 / 5,402 | 55 / 5,469 | 15 | cache key confusion, auth leakage | ⚪ none yet |  |
-| WebSockets middleware | `aspnetcore/src/Middleware/WebSockets` | 14 / 1,252 | 14 / 1,252 | 3 | handshake, origin | 🟢 labctl signalr (ws) |  |
-| Response compression | `aspnetcore/src/Middleware/ResponseCompression` | 21 / 1,280 | 23 / 1,368 | 10 | BREACH-class, buffering | ⚪ none yet |  |
-| Request decompression | `aspnetcore/src/Middleware/RequestDecompression` | 14 / 497 | 15 / 526 | 5 | decompression bombs, limits | ⚪ none yet |  |
-| Routing | `aspnetcore/src/Http/Routing` | 251 / 62,093 | 254 / 62,346 | 39 | route matching, constraints, path normalisation | 🟢 labctl auth path.* |  |
-| Form / multipart / query parsing | `aspnetcore/src/Http/WebUtilities` | 27 / 5,167 | 27 / 5,188 | 3 | limits, encoding, boundary handling | 🟢 labfuzz aspnet-form, aspnet-multipart, query-string |  |
-| Header value parsers | `aspnetcore/src/Http/Headers` | 24 / 7,286 | 24 / 7,339 | 16 | Set-Cookie, Content-Disposition, media types | 🟢 labfuzz aspnet-headers |  |
-| MVC model binding | `aspnetcore/src/Mvc/Mvc.Core/src/ModelBinding` | 128 / 14,070 | 129 / 14,196 | 4 | over-posting, type confusion, limits | ⚪ none yet |  |
-| Project templates (explicitly in scope) | `aspnetcore/src/ProjectTemplates` | 149 / 154,686 | 158 / 155,117 | 570 | insecure defaults, sample code | 🟢 scripts/09-template-audit.sh |  |
-| GitHub Actions (explicitly in scope) | `aspnetcore/.github/workflows` | 0 / 0 | 0 / 0 | 29 | workflow injection, pwn-request, token scope | 🟢 scripts/09-template-audit.sh (workflow lint) |  |
-| HttpClient / SocketsHttpHandler | `runtime/src/libraries/System.Net.Http/src/System/Net/Http/SocketsHttpHandler` | 68 / 20,523 | 69 / 21,381 | 32 | response parsing, redirects, decompression, connection reuse | 🟢 labfuzz net-http-headers |  |
-| TLS (SslStream) | `runtime/src/libraries/System.Net.Security/src` | 74 / 19,420 | 86 / 24,100 | 47 | certificate validation, renegotiation, SNI | ⚪ none yet |  |
-| QUIC (System.Net.Quic) | `runtime/src/libraries/System.Net.Quic/src` | 36 / 10,115 | 37 / 10,181 | 13 | msquic interop, stream lifetime | ⚪ none yet |  |
-| Cryptography (managed) | `runtime/src/libraries/System.Security.Cryptography/src` | 554 / 92,770 | 580 / 100,240 | 183 | X509 chain building, PEM/PKCS parsing, key import | ⚪ none yet | CVE-2024-0057 (X509 chain SFB) |
-| Cryptography native shim | `runtime/src/native/libs/System.Security.Cryptography.Native` | 76 / 18,035 | 73 / 19,971 | 44 | OpenSSL interop (shim bugs only; OpenSSL itself out of scope) | ⚪ none yet |  |
-| CMS / PKCS#7 / PKCS#12 | `runtime/src/libraries/System.Security.Cryptography.Pkcs` | 101 / 15,264 | 110 / 16,801 | 70 | ASN.1 structures, signer validation | 🟢 labfuzz asn1-der (decoder) |  |
-| XML signatures | `runtime/src/libraries/System.Security.Cryptography.Xml` | 80 / 13,074 | 80 / 13,041 | 9 | signature wrapping, transforms, references | ⚪ none yet |  |
-| COSE | `runtime/src/libraries/System.Security.Cryptography.Cose` | 18 / 5,342 | 19 / 5,381 | 12 | CBOR headers, signature validation | ⚪ none yet |  |
-| System.Text.Json | `runtime/src/libraries/System.Text.Json/src` | 308 / 62,562 | 324 / 69,436 | 211 | DoS, polymorphism, reference handling, depth | 🟢 labfuzz json-document, json-serializer, utf8-json-reader | CVE-2024-30105 (DoS) |
-| System.Xml | `runtime/src/libraries/System.Private.Xml/src` | 636 / 277,681 | 636 / 278,515 | 79 | XXE (defaults), XSLT, schema validation DoS | 🟢 labfuzz xml-reader |  |
-| System.Uri | `runtime/src/libraries/System.Private.Uri/src` | 20 / 9,709 | 20 / 9,211 | 15 | canonicalisation, IDN, file URIs, host parsing | 🟢 labfuzz uri | CVE-2023-36049 (FTP URI injection) |
-| Regular expressions | `runtime/src/libraries/System.Text.RegularExpressions/src` | 85 / 35,147 | 86 / 38,495 | 46 | ReDoS, engine differentials, source generator | 🟢 labfuzz regex |  |
-| ASN.1 | `runtime/src/libraries/System.Formats.Asn1/src` | 38 / 11,319 | 40 / 13,513 | 25 | BER/DER decoding | 🟢 labfuzz asn1-der |  |
-| CBOR | `runtime/src/libraries/System.Formats.Cbor` | 30 / 5,272 | 32 / 5,711 | 23 | decoding, canonical forms | ⚪ none yet |  |
-| TAR | `runtime/src/libraries/System.Formats.Tar/src` | 26 / 6,844 | 28 / 7,608 | 22 | path traversal, links, header parsing | 🟢 labfuzz tar |  |
-| ZIP / compression | `runtime/src/libraries/System.IO.Compression/src` | 34 / 10,404 | 61 / 17,578 | 38 | zip-slip, bombs, zlib-ng/brotli interop | 🟢 labfuzz zip, decompress |  |
-| OPC packages | `runtime/src/libraries/System.IO.Packaging` | 35 / 12,476 | 35 / 12,528 | 16 | part URIs, relationships, DoS | ⚪ none yet |  |
-| Web encoders (XSS) | `runtime/src/libraries/System.Text.Encodings.Web/src` | 22 / 4,827 | 21 / 4,755 | 6 | encoder bypass | 🟢 labfuzz web-encoders |  |
-| Mail | `runtime/src/libraries/System.Net.Mail` | 71 / 11,928 | 72 / 12,856 | 19 | header injection, address parsing | ⚪ none yet |  |
-| WebSockets (client/protocol) | `runtime/src/libraries/System.Net.WebSockets/src` | 21 / 4,458 | 21 / 4,448 | 8 | framing, compression (permessage-deflate) | ⚪ none yet |  |
-| DataContract serialization | `runtime/src/libraries/System.Private.DataContractSerialization` | 126 / 60,639 | 126 / 60,662 | 23 | type resolution, known types, DoS | 🟢 labfuzz datacontract |  |
-| BinaryFormatter (removed) | `runtime/src/libraries/System.Runtime.Serialization.Formatters` | 54 / 10,560 | 54 / 10,555 | 10 | verify it stays throwing PlatformNotSupported | ⚪ none yet |  |
-| HttpUtility | `runtime/src/libraries/System.Web.HttpUtility` | 5 / 1,098 | 5 / 1,096 | 3 | encode/decode differentials | ⚪ none yet |  |
-| Host (muxer, apphost, hostfxr) | `runtime/src/native/corehost` | 128 / 22,667 | 141 / 25,476 | 86 | DLL/so search order, config probing, EoP | ⚪ none yet |  |
-| CoreCLR VM | `runtime/src/coreclr/vm` | 537 / 479,240 | 559 / 485,868 | 504 | type loader, verifier, JIT interface, unsafe accessors | ⚪ none yet |  |
-| Metadata reader (native) | `runtime/src/coreclr/md` | 98 / 61,635 | 93 / 63,301 | 41 | malformed PE/metadata | ⚪ none yet |  |
-| Diagnostics / debugger transport | `runtime/src/coreclr/debug` | 207 / 205,062 | 222 / 207,482 | 147 | diagnostic IPC, dump creation | ⚪ none yet |  |
-| Mono runtime | `runtime/src/mono/mono` | 677 / 526,051 | 675 / 526,866 | 130 | interpreter, AOT, WASM runtime | ⚪ none yet |  |
-| GitHub Actions (runtime) | `runtime/.github/workflows` | 0 / 0 | 0 / 0 | 33 | workflow injection, token scope | 🟢 scripts/09-template-audit.sh (workflow lint) |  |
-| dotnet CLI | `sdk/src/Cli` | 694 / 72,619 | 817 / 85,209 | 602 | tool install, workload, restore, path handling | ⚪ none yet |  |
-| SDK template feed (explicitly in scope) | `sdk/template_feed` | 16 / 503 | 17 / 778 | 12 | insecure template defaults | 🟢 scripts/09-template-audit.sh |  |
-| SDK resolvers | `sdk/src/Resolvers` | 46 / 5,888 | 51 / 6,620 | 40 | SDK resolution, global.json, path hijack | ⚪ none yet |  |
-| Template engine | `templating/src` | 479 / 39,382 | — absent | n/a | template execution, symbol evaluation, path writes | 🟢 scripts/09-template-audit.sh |  |
-| WinForms (Windows) | `winforms/src` | 2758 / 555,811 | 2834 / 572,395 | 365 | clipboard/drag-drop deserialization, resources | ⚪ Windows only |  |
-| WPF (Windows) | `wpf/src` | 5619 / 2,250,894 | 5619 / 2,250,585 | 86 | XAML/BAML parsing, XPS, clipboard | ⚪ Windows only |  |
+| Area | Path (under `src/vmr/<ver>/src/`) | net10.0 files/LOC | net11.0 files/LOC | 2.3 (netfx) | Δ files | Bug classes | Lab coverage | Public history |
+|---|---|---|---|---|---|---|---|---|
+| Kestrel HTTP/1.1 parser | `aspnetcore/src/Servers/Kestrel/Core/src/Internal/Http` | 46 / 27,553 | 47 / 28,039 | 40 / 16,437 | 15 | request smuggling, header/target parsing, chunked framing, limits | 🟢 labctl http1 (46 probes) | CVE-2025-55315 (chunk-extension smuggling) |
+| Kestrel HTTP/2 | `aspnetcore/src/Servers/Kestrel/Core/src/Internal/Http2` | 14 / 5,337 | 14 / 5,380 | 45 / 3,825 | 3 | stream lifecycle, flow control, header validation, floods | 🟢 labctl http2 (36 probes) | CVE-2023-44487 (Rapid Reset) |
+| Kestrel HTTP/3 | `aspnetcore/src/Servers/Kestrel/Core/src/Internal/Http3` | 33 / 5,364 | 33 / 5,401 | — (2.x layout differs) | 5 | stream/connection lifetime (use-after-free class), QPACK | ⚪ none yet (needs QUIC + TLS listener) | CVE-2024-35264, CVE-2024-38229 (HTTP/3 RCE) |
+| HPACK / QPACK (shared) | `aspnetcore/src/Shared/runtime/Http2/Hpack` | 13 / 2,911 | 13 / 2,917 | — (2.x layout differs) | 2 | decoder state, dynamic table, integer overflow | 🟢 labctl http2 hpack-* probes |  |
+| QPACK (shared) | `aspnetcore/src/Shared/runtime/Http3/QPack` | 7 / 1,456 | 7 / 1,474 | — (2.x layout differs) | 2 | decoder state, static/dynamic table | ⚪ none yet |  |
+| QUIC transport | `aspnetcore/src/Servers/Kestrel/Transport.Quic` | 11 / 1,774 | 11 / 1,773 | — (2.x layout differs) | 4 | connection/stream lifetime over msquic | ⚪ none yet |  |
+| HTTP.sys server (Windows) | `aspnetcore/src/Servers/HttpSys` | 71 / 9,978 | 73 / 11,287 | 44 / 8,052 | 34 | native interop, request queue, auth | ⚪ Windows only |  |
+| IIS module ANCM (Windows, native C++) | `aspnetcore/src/Servers/IIS/AspNetCoreModuleV2` | 186 / 32,730 | 187 / 32,956 | — (2.x layout differs) | 22 | native memory safety, config parsing | ⚪ Windows only |  |
+| SignalR hubs | `aspnetcore/src/SignalR/server/Core` | 74 / 7,696 | 74 / 8,206 | 59 / 5,231 | 16 | hub method authZ, invocation binding, message limits | 🟢 labctl signalr (9 probes) |  |
+| SignalR MessagePack protocol | `aspnetcore/src/SignalR/common/Protocols.MessagePack` | 5 / 946 | 5 / 946 | — (2.x layout differs) | 0 | binary deserialization | ⚪ none yet |  |
+| Blazor Server circuits | `aspnetcore/src/Components/Server` | 64 / 7,676 | 66 / 7,949 | — (2.x layout differs) | 25 | circuit state, JS interop, render batch acks, event dispatch authZ | 🟢 template audit (blazor) |  |
+| Blazor SSR / forms | `aspnetcore/src/Components/Endpoints` | 138 / 10,500 | 177 / 14,751 | — (2.x layout differs) | 42 | form mapping, antiforgery, enhanced navigation | 🟢 template audit (blazor) |  |
+| Blazor WebAssembly | `aspnetcore/src/Components/WebAssembly` | 113 / 9,223 | 114 / 24,390 | — (2.x layout differs) | 56 | boot resources, auth state | 🟢 template audit (blazorwasm) |  |
+| ASP.NET Core Identity | `aspnetcore/src/Identity` | 335 / 98,488 | 335 / 98,582 | 156 / 35,812 | 87 | lockout, 2FA, token providers, passkeys, API endpoints | 🟢 template audit (webapp --auth Individual) |  |
+| JWT bearer | `aspnetcore/src/Security/Authentication/JwtBearer` | 24 / 1,432 | 24 / 1,433 | 13 / 833 | 5 | token validation configuration, event handling | 🟢 labctl auth jwt.* (16 probes) |  |
+| Cookie authentication | `aspnetcore/src/Security/Authentication/Cookies` | 20 / 1,590 | 20 / 1,596 | 15 / 1,289 | 5 | ticket protection, sliding expiry, chunking | 🟢 labctl auth path/cookie probes |  |
+| OpenID Connect | `aspnetcore/src/Security/Authentication/OpenIdConnect` | 26 / 3,706 | 26 / 3,733 | 21 / 2,932 | 10 | state/nonce, correlation, response mode | ⚪ none yet |  |
+| Negotiate / Kerberos | `aspnetcore/src/Security/Authentication/Negotiate` | 20 / 1,617 | 21 / 1,687 | — (2.x layout differs) | 11 | connection-level auth persistence | ⚪ none yet |  |
+| Authorization | `aspnetcore/src/Security/Authorization` | 49 / 3,113 | 49 / 3,213 | 38 / 2,121 | 15 | policy evaluation, endpoint metadata | 🟢 labctl auth path.* (66 probes) |  |
+| Antiforgery | `aspnetcore/src/Antiforgery` | 29 / 2,233 | 29 / 2,573 | 27 / 2,540 | 20 | token binding, content-type gating | 🟢 labctl auth csrf.* (7 probes) |  |
+| Data Protection | `aspnetcore/src/DataProtection` | 197 / 16,927 | 202 / 17,896 | 191 / 16,356 | 41 | key ring, payload format, key escrow | ⚪ none yet |  |
+| Static files | `aspnetcore/src/Middleware/StaticFiles` | 25 / 2,500 | 25 / 2,500 | 25 / 2,454 | 3 | path traversal, range, content-type | 🟢 labctl auth static.* (13 probes) |  |
+| CORS | `aspnetcore/src/Middleware/CORS` | 22 / 1,648 | 22 / 1,648 | 21 / 1,670 | 2 | origin matching, preflight | ⚪ none yet |  |
+| Forwarded headers | `aspnetcore/src/Middleware/HttpOverrides` | 17 / 1,481 | 17 / 1,493 | 11 / 1,040 | 5 | proxy trust, scheme/host spoofing | ⚪ none yet |  |
+| URL rewrite | `aspnetcore/src/Middleware/Rewrite` | 104 / 5,197 | 105 / 5,238 | 101 / 5,321 | 9 | regex rules, open redirect | ⚪ none yet |  |
+| Rate limiting | `aspnetcore/src/Middleware/RateLimiting` | 20 / 1,403 | 20 / 1,403 | — (2.x layout differs) | 3 | partition keys, bypass | ⚪ none yet |  |
+| Output caching | `aspnetcore/src/Middleware/OutputCaching` | 53 / 5,402 | 55 / 5,469 | — (2.x layout differs) | 15 | cache key confusion, auth leakage | ⚪ none yet |  |
+| WebSockets middleware | `aspnetcore/src/Middleware/WebSockets` | 14 / 1,252 | 14 / 1,252 | 6 / 349 | 3 | handshake, origin | 🟢 labctl signalr (ws) |  |
+| Response compression | `aspnetcore/src/Middleware/ResponseCompression` | 21 / 1,280 | 23 / 1,368 | 17 / 1,099 | 10 | BREACH-class, buffering | ⚪ none yet |  |
+| Request decompression | `aspnetcore/src/Middleware/RequestDecompression` | 14 / 497 | 15 / 526 | — (2.x layout differs) | 5 | decompression bombs, limits | ⚪ none yet |  |
+| Routing | `aspnetcore/src/Http/Routing` | 251 / 62,093 | 254 / 62,346 | 84 / 8,265 | 39 | route matching, constraints, path normalisation | 🟢 labctl auth path.* |  |
+| Form / multipart / query parsing | `aspnetcore/src/Http/WebUtilities` | 27 / 5,167 | 27 / 5,188 | 20 / 3,193 | 3 | limits, encoding, boundary handling | 🟢 labfuzz aspnet-form, aspnet-multipart, query-string |  |
+| Header value parsers | `aspnetcore/src/Http/Headers` | 24 / 7,286 | 24 / 7,339 | 28 / 6,884 | 16 | Set-Cookie, Content-Disposition, media types | 🟢 labfuzz aspnet-headers |  |
+| MVC model binding | `aspnetcore/src/Mvc/Mvc.Core/src/ModelBinding` | 128 / 14,070 | 129 / 14,196 | 98 / 10,184 | 4 | over-posting, type confusion, limits | ⚪ none yet |  |
+| Project templates (explicitly in scope) | `aspnetcore/src/ProjectTemplates` | 149 / 154,686 | 158 / 155,117 | — (2.x layout differs) | 570 | insecure defaults, sample code | 🟢 scripts/09-template-audit.sh |  |
+| GitHub Actions (explicitly in scope) | `aspnetcore/.github/workflows` | 0 / 0 | 0 / 0 | — (2.x layout differs) | 29 | workflow injection, pwn-request, token scope | 🟢 scripts/09-template-audit.sh (live workflow lint) |  |
+| HttpClient / SocketsHttpHandler | `runtime/src/libraries/System.Net.Http/src/System/Net/Http/SocketsHttpHandler` | 68 / 20,523 | 69 / 21,381 | n/a | 32 | response parsing, redirects, decompression, connection reuse | 🟢 labfuzz net-http-headers |  |
+| TLS (SslStream) | `runtime/src/libraries/System.Net.Security/src` | 74 / 19,420 | 86 / 24,100 | n/a | 47 | certificate validation, renegotiation, SNI | ⚪ none yet |  |
+| QUIC (System.Net.Quic) | `runtime/src/libraries/System.Net.Quic/src` | 36 / 10,115 | 37 / 10,181 | n/a | 13 | msquic interop, stream lifetime | ⚪ none yet |  |
+| Cryptography (managed) | `runtime/src/libraries/System.Security.Cryptography/src` | 554 / 92,770 | 580 / 100,240 | n/a | 183 | X509 chain building, PEM/PKCS parsing, key import | ⚪ none yet | CVE-2024-0057 (X509 chain SFB) |
+| Cryptography native shim | `runtime/src/native/libs/System.Security.Cryptography.Native` | 76 / 18,035 | 73 / 19,971 | n/a | 44 | OpenSSL interop (shim bugs only; OpenSSL itself out of scope) | ⚪ none yet |  |
+| CMS / PKCS#7 / PKCS#12 | `runtime/src/libraries/System.Security.Cryptography.Pkcs` | 101 / 15,264 | 110 / 16,801 | n/a | 70 | ASN.1 structures, signer validation | 🟢 labfuzz asn1-der (decoder) |  |
+| XML signatures | `runtime/src/libraries/System.Security.Cryptography.Xml` | 80 / 13,074 | 80 / 13,041 | n/a | 9 | signature wrapping, transforms, references | ⚪ none yet |  |
+| COSE | `runtime/src/libraries/System.Security.Cryptography.Cose` | 18 / 5,342 | 19 / 5,381 | n/a | 12 | CBOR headers, signature validation | ⚪ none yet |  |
+| System.Text.Json | `runtime/src/libraries/System.Text.Json/src` | 308 / 62,562 | 324 / 69,436 | n/a | 211 | DoS, polymorphism, reference handling, depth | 🟢 labfuzz json-document, json-serializer, utf8-json-reader | CVE-2024-30105 (DoS) |
+| System.Xml | `runtime/src/libraries/System.Private.Xml/src` | 636 / 277,681 | 636 / 278,515 | n/a | 79 | XXE (defaults), XSLT, schema validation DoS | 🟢 labfuzz xml-reader |  |
+| System.Uri | `runtime/src/libraries/System.Private.Uri/src` | 20 / 9,709 | 20 / 9,211 | n/a | 15 | canonicalisation, IDN, file URIs, host parsing | 🟢 labfuzz uri | CVE-2023-36049 (FTP URI injection) |
+| Regular expressions | `runtime/src/libraries/System.Text.RegularExpressions/src` | 85 / 35,147 | 86 / 38,495 | n/a | 46 | ReDoS, engine differentials, source generator | 🟢 labfuzz regex |  |
+| ASN.1 | `runtime/src/libraries/System.Formats.Asn1/src` | 38 / 11,319 | 40 / 13,513 | n/a | 25 | BER/DER decoding | 🟢 labfuzz asn1-der |  |
+| CBOR | `runtime/src/libraries/System.Formats.Cbor` | 30 / 5,272 | 32 / 5,711 | n/a | 23 | decoding, canonical forms | ⚪ none yet |  |
+| TAR | `runtime/src/libraries/System.Formats.Tar/src` | 26 / 6,844 | 28 / 7,608 | n/a | 22 | path traversal, links, header parsing | 🟢 labfuzz tar |  |
+| ZIP / compression | `runtime/src/libraries/System.IO.Compression/src` | 34 / 10,404 | 61 / 17,578 | n/a | 38 | zip-slip, bombs, zlib-ng/brotli interop | 🟢 labfuzz zip, decompress |  |
+| OPC packages | `runtime/src/libraries/System.IO.Packaging` | 35 / 12,476 | 35 / 12,528 | n/a | 16 | part URIs, relationships, DoS | ⚪ none yet |  |
+| Web encoders (XSS) | `runtime/src/libraries/System.Text.Encodings.Web/src` | 22 / 4,827 | 21 / 4,755 | n/a | 6 | encoder bypass | 🟢 labfuzz web-encoders |  |
+| Mail | `runtime/src/libraries/System.Net.Mail` | 71 / 11,928 | 72 / 12,856 | n/a | 19 | header injection, address parsing | ⚪ none yet |  |
+| WebSockets (client/protocol) | `runtime/src/libraries/System.Net.WebSockets/src` | 21 / 4,458 | 21 / 4,448 | n/a | 8 | framing, compression (permessage-deflate) | ⚪ none yet |  |
+| DataContract serialization | `runtime/src/libraries/System.Private.DataContractSerialization` | 126 / 60,639 | 126 / 60,662 | n/a | 23 | type resolution, known types, DoS | 🟢 labfuzz datacontract |  |
+| BinaryFormatter (removed) | `runtime/src/libraries/System.Runtime.Serialization.Formatters` | 54 / 10,560 | 54 / 10,555 | n/a | 10 | verify it stays throwing PlatformNotSupported | ⚪ none yet |  |
+| HttpUtility | `runtime/src/libraries/System.Web.HttpUtility` | 5 / 1,098 | 5 / 1,096 | n/a | 3 | encode/decode differentials | ⚪ none yet |  |
+| Host (muxer, apphost, hostfxr) | `runtime/src/native/corehost` | 128 / 22,667 | 141 / 25,476 | n/a | 86 | DLL/so search order, config probing, EoP | ⚪ none yet |  |
+| CoreCLR VM | `runtime/src/coreclr/vm` | 537 / 479,240 | 559 / 485,868 | n/a | 504 | type loader, verifier, JIT interface, unsafe accessors | ⚪ none yet |  |
+| Metadata reader (native) | `runtime/src/coreclr/md` | 98 / 61,635 | 93 / 63,301 | n/a | 41 | malformed PE/metadata | ⚪ none yet |  |
+| Diagnostics / debugger transport | `runtime/src/coreclr/debug` | 207 / 205,062 | 222 / 207,482 | n/a | 147 | diagnostic IPC, dump creation | ⚪ none yet |  |
+| Mono runtime | `runtime/src/mono/mono` | 677 / 526,051 | 675 / 526,866 | n/a | 130 | interpreter, AOT, WASM runtime | ⚪ none yet |  |
+| GitHub Actions (runtime) | `runtime/.github/workflows` | 0 / 0 | 0 / 0 | n/a | 33 | workflow injection, token scope | 🟢 scripts/09-template-audit.sh (live workflow lint) |  |
+| dotnet CLI | `sdk/src/Cli` | 694 / 72,619 | 817 / 85,209 | n/a | 602 | tool install, workload, restore, path handling | ⚪ none yet |  |
+| SDK template feed (explicitly in scope) | `sdk/template_feed` | 16 / 503 | 17 / 778 | n/a | 12 | insecure template defaults | 🟢 scripts/09-template-audit.sh |  |
+| SDK resolvers | `sdk/src/Resolvers` | 46 / 5,888 | 51 / 6,620 | n/a | 40 | SDK resolution, global.json, path hijack | ⚪ none yet |  |
+| Template engine | `templating/src` | 479 / 39,382 | — absent | n/a | n/a | template execution, symbol evaluation, path writes | 🟢 scripts/09-template-audit.sh |  |
+| WinForms (Windows) | `winforms/src` | 2758 / 555,811 | 2834 / 572,395 | n/a | 365 | clipboard/drag-drop deserialization, resources | ⚪ Windows only |  |
+| WPF (Windows) | `wpf/src` | 5619 / 2,250,894 | 5619 / 2,250,585 | n/a | 86 | XAML/BAML parsing, XPS, clipboard | ⚪ Windows only |  |
 
 **Coverage:** 33/71 areas have lab tooling; ⚪ rows are open ground.
 

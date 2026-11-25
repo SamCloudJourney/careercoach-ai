@@ -23,8 +23,10 @@ case "$(uname -s)" in
 esac
 RID="$OS-$ARCH"
 
+# Every SDK feature band shipped with the latest patch (e.g. 10.0.404 AND 10.0.115) is in scope.
 python3 -I -c 'import json,sys
-for v in json.load(open(sys.argv[1]))["versions"]["in_scope"]: print(v["channel"], v["sdk"])' "$MANIFEST" |
+for v in json.load(open(sys.argv[1]))["versions"]["in_scope"]:
+    for s in v.get("sdks", [v["sdk"]]): print(v["channel"], s)' "$MANIFEST" |
 while read -r channel sdk; do
   if [[ -x "$DOTNET_ROOT/dotnet" ]] && "$DOTNET_ROOT/dotnet" --list-sdks 2>/dev/null | grep -q "^$sdk "; then
     echo "==> SDK $sdk already installed"; continue

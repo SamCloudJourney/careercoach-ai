@@ -1,108 +1,150 @@
 #!/usr/bin/env bash
-# Organise the downloaded source by bounty tier and write notes/COMPONENT-MAP.md.
+# Organise everything that was fetched into one browsable tree, and write:
+#   notes/COMPONENT-MAP.md   every shipped component, tier, upstream repo + commit per release
+#   notes/INVENTORY.md       every checkout and shipped artifact the lab holds, with provenance and scope basis
 #
-#   src/by-tier/<tier>/<component>/<net10.0|net11.0>  ->  src/vmr/<ver>/src/<component>   (symlinks, no copies)
-#
-# Provenance (upstream repo + exact commit) comes from each VMR's src/source-manifest.json.
+# View created (symlinks only, nothing is copied):
+#   src/by-tier/<tier>/<component>/<net10.0|net10.0-sdk4xx|net11.0|aspnetcore-2.3>   source
+#   src/by-tier/<tier>/<component>/github-actions-live                               live .github of its repo
 set -euo pipefail
 LAB_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 exec python3 -I - "$LAB_ROOT" <<'PY'
-import json, os, sys, subprocess
+import glob, json, os, shutil, subprocess, sys
 root = sys.argv[1]
 src = os.path.join(root, "src")
 m = json.load(open(os.path.join(root, "scope", "manifest.json")))
-vmrs = [c for c in m["checkouts"] if c["dest"].startswith("vmr/")]
+basis = m["program"]["scope_basis"]
 tiers = {k: v for k, v in m["component_tiers"].items() if not k.startswith("$")}
-
 def tier_of(comp):
     for t, v in tiers.items():
-        if comp in v.get("components", []):
-            return t
+        if comp in v.get("components", []): return t
     return "unclassified"
-
-def size(path):
-    try:
-        out = subprocess.run(["du", "-sk", path], capture_output=True, text=True).stdout.split()[0]
-        return int(out) * 1024
-    except Exception:
-        return 0
-
+def du(path):
+    try: return int(subprocess.run(["du", "-sk", "--exclude=.git", path], capture_output=True, text=True).stdout.split()[0]) * 1024
+    except Exception: return 0
 def human(b):
-    for unit in ["B", "K", "M", "G"]:
-        if b < 1024: return f"{b:.0f}{unit}"
+    for u in ["B", "K", "M", "G"]:
+        if b < 1024: return f"{b:.0f}{u}"
         b /= 1024
     return f"{b:.1f}T"
+def prov(dest):
+    p = os.path.join(src, dest + ".provenance")
+    return dict(l.rstrip("\n").split("=", 1) for l in open(p) if "=" in l) if os.path.exists(p) else {}
 
 by_tier = os.path.join(src, "by-tier")
+if os.path.isdir(by_tier): shutil.rmtree(by_tier)
+def link(target, tier, comp, name):
+    d = os.path.join(by_tier, tier, comp); os.makedirs(d, exist_ok=True)
+    os.symlink(os.path.relpath(target, d), os.path.join(d, name))
+
+# ---- product VMRs
+vmrs = [c for c in m["checkouts"] if c["kind"] == "product" and c["dest"].startswith("vmr/")]
 rows = {}
 for c in vmrs:
-    ver = c["dest"].split("/")[1]
+    ver = c["dest"].split("/", 1)[1]
     vmr = os.path.join(src, c["dest"])
-    manifest = json.load(open(os.path.join(vmr, "src", "source-manifest.json")))
-    for repo in manifest["repositories"]:
-        comp = repo["path"]
-        comp_dir = os.path.join(vmr, "src", comp)
-        if not os.path.isdir(comp_dir):
-            continue
+    sm = os.path.join(vmr, "src", "source-manifest.json")
+    if not os.path.exists(sm): continue
+    for repo in json.load(open(sm))["repositories"]:
+        comp, comp_dir = repo["path"], os.path.join(vmr, "src", repo["path"])
+        if not os.path.isdir(comp_dir): continue
         t = tier_of(comp)
-        link_dir = os.path.join(by_tier, t, comp)
-        os.makedirs(link_dir, exist_ok=True)
-        link = os.path.join(link_dir, ver)
-        if os.path.islink(link): os.unlink(link)
-        os.symlink(os.path.relpath(comp_dir, link_dir), link)
+        link(comp_dir, t, comp, ver)
         r = rows.setdefault(comp, {"tier": t, "uri": repo["remoteUri"]})
-        r[ver] = {"sha": repo["commitSha"], "size": size(comp_dir)}
-    third_party = manifest.get("submodules", [])
-    rows.setdefault("_submodules", {})[ver] = third_party
-
-# Latest 10.0 SDK band lives outside the VMR.
+        r[ver] = {"sha": repo["commitSha"], "size": du(comp_dir)}
+# ---- ASP.NET Core 2.3 + live GitHub Actions
 for c in m["checkouts"]:
-    if c["dest"].startswith("sdk-band/"):
-        comp = c["dest"].split("/")[-1]
-        link_dir = os.path.join(by_tier, tier_of(comp), comp)
-        os.makedirs(link_dir, exist_ok=True)
-        link = os.path.join(link_dir, c["dest"].split("/")[1] + "-" + c["tag"].lstrip("v"))
-        if os.path.islink(link): os.unlink(link)
-        os.symlink(os.path.relpath(os.path.join(src, c["dest"]), link_dir), link)
+    d = os.path.join(src, c["dest"])
+    if not os.path.isdir(d): continue
+    if c["dest"] == "aspnetcore-2.3":
+        link(d, "tier1_core", "aspnetcore", "aspnetcore-2.3")
+    elif c["kind"] == "actions" and os.path.isdir(os.path.join(d, ".github")):
+        comp = c.get("component", c["dest"].split("/")[-1])
+        link(os.path.join(d, ".github"), c.get("tier") or tier_of(comp), comp, "github-actions-live")
 
-vers = [c["dest"].split("/")[1] for c in vmrs]
-tags = {c["dest"].split("/")[1]: c["tag"] for c in vmrs}
+# ---- COMPONENT-MAP.md
+vers = [c["dest"].split("/", 1)[1] for c in vmrs]
+tags = {c["dest"].split("/", 1)[1]: c["ref"] for c in vmrs}
 order = ["tier1_core", "tier2_shipped_product", "tier3_toolchain", "out_of_scope_in_tree", "unclassified"]
 label = {"tier1_core": "Tier 1 - core product", "tier2_shipped_product": "Tier 2 - shipped product",
-         "tier3_toolchain": "Tier 3 - toolchain (confirm with MSRC)", "out_of_scope_in_tree": "Out of scope (in tree)",
-         "unclassified": "Unclassified"}
-out = ["# Component map", "",
-       "Generated by `scripts/03-link-components.sh` from each VMR's `src/source-manifest.json`. "
-       "Browse by tier under `src/by-tier/`.", "",
-       "VMR tags: " + ", ".join(f"`{v}` = `{tags[v]}`" for v in vers), ""]
+         "tier3_toolchain": "Tier 3 - toolchain (confirm with MSRC)", "out_of_scope_in_tree": "Out of scope (in tree)", "unclassified": "Unclassified"}
+out = ["# Component map", "", "Generated by `scripts/03-link-components.sh` from each VMR's `src/source-manifest.json`. Browse by tier under `src/by-tier/`.", "",
+       "Releases: " + ", ".join(f"`{v}` = `{tags[v]}`" for v in vers) + ", plus `aspnetcore-2.3` = ASP.NET Core 2.3.14 under `tier1_core/aspnetcore/`.", ""]
 for t in order:
-    comps = sorted(k for k, v in rows.items() if not k.startswith("_") and v["tier"] == t)
+    comps = sorted(k for k, v in rows.items() if v["tier"] == t)
     if not comps: continue
     out += [f"## {label[t]}", "", tiers.get(t, {}).get("meaning", ""), "",
-            "| Component | Upstream | " + " | ".join(f"{v} commit" for v in vers) + " | Size (" + vers[-1] + ") |",
-            "|---|---|" + "---|" * len(vers) + "---|"]
+            "| Component | Upstream | " + " | ".join(f"{v}" for v in vers) + " | Size |", "|---|---|" + "---|" * len(vers) + "---|"]
     for comp in comps:
         r = rows[comp]
-        shas = []
-        for v in vers:
-            if v in r:
-                shas.append(f"[`{r[v]['sha'][:10]}`]({r['uri']}/commit/{r[v]['sha']})")
-            else:
-                shas.append("— (not in this VMR)")
-        sz = human(r.get(vers[-1], r.get(vers[0], {})).get("size", 0))
-        out.append(f"| `{comp}` | {r['uri'].replace('https://github.com/', '')} | " + " | ".join(shas) + f" | {sz} |")
+        cells = [f"[`{r[v]['sha'][:10]}`]({r['uri']}/commit/{r[v]['sha']})" if v in r else "—" for v in vers]
+        size = max((r[v]["size"] for v in vers if v in r), default=0)
+        upstream = r["uri"].replace("https://github.com/", "").replace("https://dev.azure.com/dnceng/internal/_git/", "(internal mirror) ")
+        out.append(f"| `{comp}` | {upstream} | " + " | ".join(cells) + f" | {human(size)} |")
     out.append("")
-subs = rows.get("_submodules", {})
-if subs:
-    out += ["## Vendored third-party submodules (out of scope unless the bug is in .NET's use of them)", ""]
-    for v in vers:
-        out.append(f"- **{v}**: " + ", ".join(f"`{s['path']}`" for s in subs.get(v, [])))
-    out.append("")
-path = os.path.join(root, "notes", "COMPONENT-MAP.md")
-os.makedirs(os.path.dirname(path), exist_ok=True)
-open(path, "w").write("\n".join(out))
-print(f"wrote {path}")
+open(os.path.join(root, "notes", "COMPONENT-MAP.md"), "w").write("\n".join(out))
+
+# ---- INVENTORY.md
+inv = ["# Inventory", "",
+       "Everything this lab holds, generated by `scripts/03-link-components.sh`. Each row cites the bounty wording that puts it in scope "
+       "(see [SCOPE.md](../SCOPE.md)). Source trees live under `src/` (gitignored, rebuilt by `make source`).", "",
+       "| Basis key | MSRC wording |", "|---|---|"] + [f"| `{k}` | {v} |" for k, v in basis.items()] + [""]
+kind_title = {"product": "Product source (exact release refs)", "actions": "Live GitHub Actions (default branch, `.github` only)",
+              "docs": "Documentation and samples (as published)", "reference": "Reference"}
+total = 0
+for kind in ("product", "actions", "docs", "reference"):
+    items = [c for c in m["checkouts"] if c["kind"] == kind]
+    inv += [f"## {kind_title[kind]}", "", "| Path (`src/…`) | Repository | Ref | Commit | Previous (diff base) | Size | Basis | Notes |", "|---|---|---|---|---|---|---|---|"]
+    for c in items:
+        p = prov(c["dest"]); d = os.path.join(src, c["dest"])
+        size = du(d) if os.path.isdir(d) else 0; total += size
+        commit = p.get("commit", "**missing**")[:12]
+        prevc = p.get("previous_commit", "")[:12]
+        prev = f"`{c.get('previous_ref', '')[:24]}` {prevc}" if c.get("previous_ref") else ""
+        repo = c["repo"].replace("https://github.com/", "").removesuffix(".git")
+        ref = c["ref"] if c["ref_type"] != "commit" else c["ref"][:12]
+        inv.append(f"| `{c['dest']}` | {repo} | `{ref}` ({c['ref_type']}) | `{commit}` | {prev} | {human(size)} | `{c['basis']}` | {c.get('note', '')} |")
+    inv.append("")
+
+# shipped artifacts
+ship = os.path.join(src, "shipped")
+tpl = sorted(glob.glob(os.path.join(ship, "templates", "*", "*", "*.provenance.json")))
+inv += ["## Shipped artifacts (what Microsoft distributes)", "", "### Templates bundled in the in-scope SDKs", "",
+        "| Runtime | Package | Version | Templates | Built from (dotnet/dotnet commit) |", "|---|---|---|---|---|"]
+for pj in tpl:
+    j = json.load(open(pj)); dest = pj[: -len(".provenance.json")]
+    n = len(glob.glob(os.path.join(dest, "**", ".template.config", "template.json"), recursive=True))
+    inv.append(f"| {j['bundled_with_runtime']} | `{j['package']}` | {j['version']} | {n} | `{(j['source_commit'] or '?')[:12]}` |")
+bins = sorted(glob.glob(os.path.join(ship, "binaries", "*", "MANIFEST.json")))
+inv += ["", "### Release binaries (SHA-512 verified against release metadata)", "", "| Release | Files | Size |", "|---|---|---|"]
+for b in bins:
+    d = os.path.dirname(b); files = json.load(open(b))
+    inv.append(f"| {os.path.basename(d)} | " + ", ".join(f"`{f['name']}`" for f in files) + f" | {human(du(d))} |")
+a23 = glob.glob(os.path.join(ship, "aspnetcore-2.3", "*", "MANIFEST.json"))
+if a23:
+    j = json.load(open(a23[0]))
+    commits = {g["source_commit"] for g in j["shipped"]}
+    inv += ["", "### ASP.NET Core 2.3 NuGet packages", "",
+            f"{len(j['shipped'])} `Microsoft.AspNetCore*` packages at {os.path.basename(os.path.dirname(a23[0]))}, built from "
+            + ", ".join(f"`{c[:12]}`" for c in commits if c) + " (matches `src/aspnetcore-2.3`)."]
+cves = os.path.join(root, "scope", "known-cves.json")
+if os.path.exists(cves):
+    inv += ["", f"### Known CVEs", "", f"{json.load(open(cves))['count']} CVEs from release metadata, every channel → `scope/known-cves.json`, [KNOWN-CVES.md](KNOWN-CVES.md)."]
+sdks = sorted(os.listdir(os.path.join(root, ".dotnet", "sdk"))) if os.path.isdir(os.path.join(root, ".dotnet", "sdk")) else []
+rts = sorted(os.listdir(os.path.join(root, ".dotnet", "shared", "Microsoft.NETCore.App"))) if sdks else []
+inv += ["", "### Installed toolchain (`.dotnet/`)", "", f"SDKs: {', '.join(f'`{s}`' for s in sdks)} · runtimes: {', '.join(f'`{r}`' for r in rts)}", ""]
+inv += ["## Deliberately not downloaded", "", "| What | Why |", "|---|---|"]
+for x in m.get("versions", {}).get("out_of_scope", []):
+    ch = x["channel"]; inv.append(f"| {(".NET " + ch) if ch[:1].isdigit() else ch} | {x["reason"]} |")
+for x in m.get("not_covered", []):
+    inv.append(f"| {x['what']} | {x['why']} |")
+inv.append(f"| Microsoft.Extensions 8.0.x used by ASP.NET Core 2.3 | {m['versions']['aspnetcore_on_netfx']['dependency_note']} |")
+inv += ["", f"**Total source on disk:** {human(total + du(ship))} (excluding `.git` and `.dotnet/`).", ""]
+open(os.path.join(root, "notes", "INVENTORY.md"), "w").write("\n".join(inv))
+
+n_links = sum(len(files) + len(dirs) for _, dirs, files in os.walk(by_tier, followlinks=False) if True)
+print(f"wrote notes/COMPONENT-MAP.md ({len(rows)} components x {len(vers)} releases) and notes/INVENTORY.md")
 for t in order:
-    n = sum(1 for k, v in rows.items() if not k.startswith("_") and v["tier"] == t)
-    if n: print(f"  {label[t]:<42} {n} components")
+    comps = sorted(os.listdir(os.path.join(by_tier, t))) if os.path.isdir(os.path.join(by_tier, t)) else []
+    if comps: print(f"  {label[t]:<42} {len(comps):>2} components")
 PY

@@ -4,7 +4,7 @@
 #   2. GitHub Actions workflows in the in-scope repositories (static lint for known workflow bug classes)
 #
 # Usage: scripts/09-template-audit.sh [--build]
-# Output: notes/TEMPLATE-AUDIT.md, work dir labs/artifacts/templates/<sdk>/<template>
+# Output: notes/private/TEMPLATE-AUDIT.md (gitignored - audit hits are unreviewed results), work dir labs/artifacts/templates/<sdk>/<template>
 set -euo pipefail
 LAB_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 source "$LAB_ROOT/scripts/env.sh" >/dev/null
@@ -108,17 +108,23 @@ WF_RULES = [
     ("unpinned-action", "Third-party action pinned to a tag/branch, not a SHA", r"uses:\s*(?!actions/|github/|dotnet/|\./)[\w.-]+/[\w./-]+@(?![0-9a-f]{40}\b)[\w.-]+"),
     ("workflow-run-artifact", "workflow_run consuming artifacts (artifact poisoning)", r"workflow_run[\s\S]*download-artifact"),
 ]
+# Live workflows + composite actions on each associated repository's default branch (what actually runs),
+# fetched by scripts/02-fetch-source.sh actions. Mirrored copies inside the VMR do not run and are ignored.
 wf_hits = collections.defaultdict(list)
 wf_total = 0
-for ver in ("net10.0", "net11.0"):
-    for repo in ("aspnetcore", "runtime", "sdk", "templating", "winforms", "wpf", "windowsdesktop"):
-        for f in sorted(glob.glob(os.path.join(root, "src", "vmr", ver, "src", repo, ".github", "workflows", "*.y*ml"))):
-            wf_total += 1
-            text = open(f, errors="ignore").read()
-            for rid, desc, rx in WF_RULES:
-                for mm in re.finditer(rx, text):
-                    line = text[:mm.start()].count("\n") + 1
-                    wf_hits[rid].append(f"{ver}/{repo}/.github/workflows/{os.path.basename(f)}:{line}")
+wf_repos = 0
+live = os.path.join(root, "src", "github-actions")
+for repo in sorted(os.listdir(live)) if os.path.isdir(live) else []:
+    files = sorted(glob.glob(os.path.join(live, repo, ".github", "workflows", "*.y*ml")) +
+                   glob.glob(os.path.join(live, repo, ".github", "actions", "**", "action.y*ml"), recursive=True))
+    wf_repos += 1 if files else 0
+    for f in files:
+        wf_total += 1
+        text = open(f, errors="ignore").read()
+        for rid, desc, rx in WF_RULES:
+            for mm in re.finditer(rx, text):
+                line = text[:mm.start()].count("\n") + 1
+                wf_hits[rid].append(f"{repo}/{os.path.relpath(f, os.path.join(live, repo))}:{line}")
 
 # ------------------------------------------------------------------ report
 out = ["# Template & GitHub Actions audit", "",
@@ -148,14 +154,15 @@ for (cid, loc), why in BENIGN.items():
     n = sum(1 for checks in results.values() for b in checks.get("_benign", []) if b.startswith(cid + " " + loc))
     out.append(f"- **{cid}** at `{loc}` ({n} hits): {why}")
 out += ["", "## GitHub Actions (in-scope repositories)", "",
-        f"{wf_total} workflow files scanned across both in-scope VMRs.", "",
+        f"{wf_total} live workflow / composite-action files scanned across {wf_repos} associated repositories (default branch).", "",
         "| Rule | Hits | Examples |", "|---|---|---|"]
 for rid, desc, _ in WF_RULES:
     hits = wf_hits.get(rid, [])
     out.append(f"| {desc} | {len(hits)} | " + "<br>".join(f"`{h}`" for h in hits[:4]) + (" …" if len(hits) > 4 else "") + " |")
-out += ["", "Workflows in the VMR are mirrored copies; confirm a finding against the live upstream repository "
-        "(the commit is in `notes/COMPONENT-MAP.md`) before reporting, since mirrored workflows do not run in `dotnet/dotnet`.", ""]
-path = os.path.join(root, "notes", "TEMPLATE-AUDIT.md")
+out += ["", "Commits audited are in `notes/INVENTORY.md`. Re-fetch (`scripts/02-fetch-source.sh actions`) before reporting: "
+        "workflows change daily, and a finding must reproduce on the current default branch.", ""]
+path = os.path.join(root, "notes", "private", "TEMPLATE-AUDIT.md")  # results stay private until triaged
+os.makedirs(os.path.dirname(path), exist_ok=True)
 open(path, "w").write("\n".join(out))
-print(f"wrote {path}: {len(templates)} templates x {len(sdks)} SDKs, {wf_total} workflows")
+print(f"wrote {path}: {len(templates)} templates x {len(sdks)} SDKs, {wf_total} live workflow files in {wf_repos} repos")
 PY

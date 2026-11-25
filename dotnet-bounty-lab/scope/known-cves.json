@@ -1,0 +1,5415 @@
+{
+ "generated_from": "https://builds.dotnet.microsoft.com/dotnet/release-metadata",
+ "count": 262,
+ "cves": [
+  {
+   "cve": "CVE-2026-114146",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114146",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-109475",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-109475",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114147",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114147",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-105544",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-105544",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114149",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114149",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114150",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114150",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114151",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114151",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114152",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114152",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-109476",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-109476",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-109481",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-109481",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-118745",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-118745",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114155",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114155",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114156",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114156",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-118746",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-118746",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-118747",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-118747",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114157",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114157",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114158",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114158",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114159",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114159",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-118748",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-118748",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-118749",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-118749",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-120796",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-120796",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-114154",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114154",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-109478",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-109478",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-11-10"
+  },
+  {
+   "cve": "CVE-2026-111497",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111497",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.3",
+     "date": "2026-10-25"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.14",
+     "date": "2026-10-25"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.22",
+     "date": "2026-10-25"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.33",
+     "date": "2026-10-25"
+    }
+   ],
+   "first_fixed": "2026-10-25"
+  },
+  {
+   "cve": "CVE-2026-114148",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114148",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.3",
+     "date": "2026-10-25"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.14",
+     "date": "2026-10-25"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.22",
+     "date": "2026-10-25"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.33",
+     "date": "2026-10-25"
+    }
+   ],
+   "first_fixed": "2026-10-25"
+  },
+  {
+   "cve": "CVE-2026-70175",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70175",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "11.0",
+     "release": "11.0.0",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.15",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.23",
+     "date": "2026-11-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.34",
+     "date": "2026-11-10"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70197",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70197",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.3",
+     "date": "2026-10-25"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.14",
+     "date": "2026-10-25"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.22",
+     "date": "2026-10-25"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.33",
+     "date": "2026-10-25"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-102870",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-102870",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.3",
+     "date": "2026-10-25"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.14",
+     "date": "2026-10-25"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-66822",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-66822",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-58280",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58280",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-69651",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-69651",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96958",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96958",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96960",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96960",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96959",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96959",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-84008",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84008",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70174",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70174",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-87697",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-87697",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70035",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70035",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-83520",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-83520",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96229",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96229",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96232",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96232",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96234",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96234",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70007",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70007",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96224",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96224",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96235",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96235",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-85363",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-85363",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96233",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96233",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70161",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70161",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70165",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70165",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70190",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70190",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96238",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96238",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70159",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70159",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-105016",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-105016",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-85790",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-85790",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70162",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70162",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70183",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70183",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-88092",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-88092",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70188",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70188",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96957",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96957",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70194",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70194",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96230",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96230",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-92707",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-92707",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96231",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96231",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96225",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96225",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96236",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96236",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.2",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70196",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70196",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70179",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70179",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70181",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70181",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96237",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96237",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-70186",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70186",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.13",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.21",
+     "date": "2026-10-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-96222",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-96222",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.32",
+     "date": "2026-10-13"
+    }
+   ],
+   "first_fixed": "2026-10-13"
+  },
+  {
+   "cve": "CVE-2026-69439",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-69439",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.1",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.12",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.20",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.31",
+     "date": "2026-09-08"
+    }
+   ],
+   "first_fixed": "2026-09-08"
+  },
+  {
+   "cve": "CVE-2026-71328",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-71328",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.1",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.12",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.20",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.31",
+     "date": "2026-09-08"
+    }
+   ],
+   "first_fixed": "2026-09-08"
+  },
+  {
+   "cve": "CVE-2026-69522",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-69522",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.1",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.12",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.20",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.31",
+     "date": "2026-09-08"
+    }
+   ],
+   "first_fixed": "2026-09-08"
+  },
+  {
+   "cve": "CVE-2026-69304",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-69304",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.1",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.12",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.20",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.31",
+     "date": "2026-09-08"
+    }
+   ],
+   "first_fixed": "2026-09-08"
+  },
+  {
+   "cve": "CVE-2026-58649",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58649",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.1",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.12",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.20",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.31",
+     "date": "2026-09-08"
+    }
+   ],
+   "first_fixed": "2026-09-08"
+  },
+  {
+   "cve": "CVE-2026-69806",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-69806",
+   "fixed_in": [
+    {
+     "channel": "11.0",
+     "release": "11.0.0-rc.1",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "10.0",
+     "release": "10.0.12",
+     "date": "2026-09-08"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.20",
+     "date": "2026-09-08"
+    }
+   ],
+   "first_fixed": "2026-09-08"
+  },
+  {
+   "cve": "CVE-2026-62898",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-62898",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.11",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.19",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.30",
+     "date": "2026-08-11"
+    }
+   ],
+   "first_fixed": "2026-08-11"
+  },
+  {
+   "cve": "CVE-2026-62899",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-62899",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.11",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.19",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.30",
+     "date": "2026-08-11"
+    }
+   ],
+   "first_fixed": "2026-08-11"
+  },
+  {
+   "cve": "CVE-2026-62900",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-62900",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.11",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.19",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.30",
+     "date": "2026-08-11"
+    }
+   ],
+   "first_fixed": "2026-08-11"
+  },
+  {
+   "cve": "CVE-2026-62901",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-62901",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.11",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.19",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.30",
+     "date": "2026-08-11"
+    }
+   ],
+   "first_fixed": "2026-08-11"
+  },
+  {
+   "cve": "CVE-2026-62886",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-62886",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.11",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.19",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.30",
+     "date": "2026-08-11"
+    }
+   ],
+   "first_fixed": "2026-08-11"
+  },
+  {
+   "cve": "CVE-2026-62871",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-62871",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.11",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.19",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.30",
+     "date": "2026-08-11"
+    }
+   ],
+   "first_fixed": "2026-08-11"
+  },
+  {
+   "cve": "CVE-2026-70354",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-70354",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.11",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.19",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.30",
+     "date": "2026-08-11"
+    }
+   ],
+   "first_fixed": "2026-08-11"
+  },
+  {
+   "cve": "CVE-2026-62902",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-62902",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.11",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.19",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.30",
+     "date": "2026-08-11"
+    }
+   ],
+   "first_fixed": "2026-08-11"
+  },
+  {
+   "cve": "CVE-2026-62897",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-62897",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.11",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.19",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.30",
+     "date": "2026-08-11"
+    }
+   ],
+   "first_fixed": "2026-08-11"
+  },
+  {
+   "cve": "CVE-2026-62909",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-62909",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.11",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.19",
+     "date": "2026-08-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.30",
+     "date": "2026-08-11"
+    }
+   ],
+   "first_fixed": "2026-08-11"
+  },
+  {
+   "cve": "CVE-2026-50651",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50651",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-50526",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50526",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-50524",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50524",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-50646",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50646",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-50649",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50649",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-50650",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50650",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-56158",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56158",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-47302",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47302",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-50648",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50648",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-50527",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50527",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-47304",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47304",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-50525",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50525",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-57108",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57108",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-50528",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50528",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-50659",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50659",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-47300",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47300",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-47303",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47303",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.10",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.18",
+     "date": "2026-07-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.29",
+     "date": "2026-07-14"
+    }
+   ],
+   "first_fixed": "2026-07-14"
+  },
+  {
+   "cve": "CVE-2026-45591",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45591",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.9",
+     "date": "2026-06-09"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.17",
+     "date": "2026-06-09"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.28",
+     "date": "2026-06-09"
+    }
+   ],
+   "first_fixed": "2026-06-09"
+  },
+  {
+   "cve": "CVE-2026-45491",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45491",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.9",
+     "date": "2026-06-09"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.17",
+     "date": "2026-06-09"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.28",
+     "date": "2026-06-09"
+    }
+   ],
+   "first_fixed": "2026-06-09"
+  },
+  {
+   "cve": "CVE-2026-45490",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45490",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.9",
+     "date": "2026-06-09"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.17",
+     "date": "2026-06-09"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.28",
+     "date": "2026-06-09"
+    }
+   ],
+   "first_fixed": "2026-06-09"
+  },
+  {
+   "cve": "CVE-2026-32177",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32177",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.8",
+     "date": "2026-05-12"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.16",
+     "date": "2026-05-12"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.27",
+     "date": "2026-05-12"
+    }
+   ],
+   "first_fixed": "2026-05-12"
+  },
+  {
+   "cve": "CVE-2026-35433",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-35433",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.8",
+     "date": "2026-05-12"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.16",
+     "date": "2026-05-12"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.27",
+     "date": "2026-05-12"
+    }
+   ],
+   "first_fixed": "2026-05-12"
+  },
+  {
+   "cve": "CVE-2026-32175",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32175",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.8",
+     "date": "2026-05-12"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.16",
+     "date": "2026-05-12"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.27",
+     "date": "2026-05-12"
+    }
+   ],
+   "first_fixed": "2026-05-12"
+  },
+  {
+   "cve": "CVE-2026-42899",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42899",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.8",
+     "date": "2026-05-12"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.16",
+     "date": "2026-05-12"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.27",
+     "date": "2026-05-12"
+    }
+   ],
+   "first_fixed": "2026-05-12"
+  },
+  {
+   "cve": "CVE-2026-40372",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-40372",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.7",
+     "date": "2026-04-21"
+    }
+   ],
+   "first_fixed": "2026-04-21"
+  },
+  {
+   "cve": "CVE-2026-26171",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-26171",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.6",
+     "date": "2026-04-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.15",
+     "date": "2026-04-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.26",
+     "date": "2026-04-14"
+    }
+   ],
+   "first_fixed": "2026-04-14"
+  },
+  {
+   "cve": "CVE-2026-32203",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32203",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.6",
+     "date": "2026-04-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.15",
+     "date": "2026-04-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.26",
+     "date": "2026-04-14"
+    }
+   ],
+   "first_fixed": "2026-04-14"
+  },
+  {
+   "cve": "CVE-2026-33116",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33116",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.6",
+     "date": "2026-04-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.15",
+     "date": "2026-04-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.26",
+     "date": "2026-04-14"
+    }
+   ],
+   "first_fixed": "2026-04-14"
+  },
+  {
+   "cve": "CVE-2026-32178",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32178",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.6",
+     "date": "2026-04-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.15",
+     "date": "2026-04-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.26",
+     "date": "2026-04-14"
+    }
+   ],
+   "first_fixed": "2026-04-14"
+  },
+  {
+   "cve": "CVE-2026-26130",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-26130",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.4",
+     "date": "2026-03-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.14",
+     "date": "2026-03-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.25",
+     "date": "2026-03-10"
+    }
+   ],
+   "first_fixed": "2026-03-10"
+  },
+  {
+   "cve": "CVE-2026-26127",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-26127",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.4",
+     "date": "2026-03-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.14",
+     "date": "2026-03-10"
+    }
+   ],
+   "first_fixed": "2026-03-10"
+  },
+  {
+   "cve": "CVE-2026-26131",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-26131",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.4",
+     "date": "2026-03-10"
+    }
+   ],
+   "first_fixed": "2026-03-10"
+  },
+  {
+   "cve": "CVE-2026-21218",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-21218",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.3",
+     "date": "2026-02-10"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.13",
+     "date": "2026-02-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.24",
+     "date": "2026-02-10"
+    }
+   ],
+   "first_fixed": "2026-02-10"
+  },
+  {
+   "cve": "CVE-2025-55247",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-55247",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.0-rc.2",
+     "date": "2025-10-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.10",
+     "date": "2025-10-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.21",
+     "date": "2025-10-14"
+    }
+   ],
+   "first_fixed": "2025-10-14"
+  },
+  {
+   "cve": "CVE-2025-55315",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-55315",
+   "fixed_in": [
+    {
+     "channel": "10.0",
+     "release": "10.0.0-rc.2",
+     "date": "2025-10-14"
+    },
+    {
+     "channel": "9.0",
+     "release": "9.0.10",
+     "date": "2025-10-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.21",
+     "date": "2025-10-14"
+    }
+   ],
+   "first_fixed": "2025-10-14"
+  },
+  {
+   "cve": "CVE-2025-55248",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-55248",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.10",
+     "date": "2025-10-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.21",
+     "date": "2025-10-14"
+    }
+   ],
+   "first_fixed": "2025-10-14"
+  },
+  {
+   "cve": "CVE-2025-30399",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30399",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.6",
+     "date": "2025-06-10"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.17",
+     "date": "2025-06-10"
+    }
+   ],
+   "first_fixed": "2025-06-10"
+  },
+  {
+   "cve": "CVE-2025-26646",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-26646",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.5",
+     "date": "2025-05-13"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.16",
+     "date": "2025-05-22"
+    }
+   ],
+   "first_fixed": "2025-05-13"
+  },
+  {
+   "cve": "CVE-2025-26682",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-26682",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.4",
+     "date": "2025-04-08"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.15",
+     "date": "2025-04-08"
+    }
+   ],
+   "first_fixed": "2025-04-08"
+  },
+  {
+   "cve": "CVE-2025-24070",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24070",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.3",
+     "date": "2025-03-11"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.14",
+     "date": "2025-03-11"
+    }
+   ],
+   "first_fixed": "2025-03-11"
+  },
+  {
+   "cve": "CVE-2025-21171",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21171",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.1",
+     "date": "2025-01-14"
+    }
+   ],
+   "first_fixed": "2025-01-14"
+  },
+  {
+   "cve": "CVE-2025-21172",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21172",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.1",
+     "date": "2025-01-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.12",
+     "date": "2025-01-14"
+    }
+   ],
+   "first_fixed": "2025-01-14"
+  },
+  {
+   "cve": "CVE-2025-21176",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21176",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.1",
+     "date": "2025-01-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.12",
+     "date": "2025-01-14"
+    }
+   ],
+   "first_fixed": "2025-01-14"
+  },
+  {
+   "cve": "CVE-2025-21173",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21173",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.1",
+     "date": "2025-01-14"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.12",
+     "date": "2025-01-14"
+    }
+   ],
+   "first_fixed": "2025-01-14"
+  },
+  {
+   "cve": "CVE-2024-43498",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-43498",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.0",
+     "date": "2024-12-03"
+    }
+   ],
+   "first_fixed": "2024-12-03"
+  },
+  {
+   "cve": "CVE-2024-43499",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-43499",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.0",
+     "date": "2024-12-03"
+    }
+   ],
+   "first_fixed": "2024-12-03"
+  },
+  {
+   "cve": "CVE-2024-43483",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-43483",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.0-rc.2",
+     "date": "2024-10-08"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.10",
+     "date": "2024-10-08"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.35",
+     "date": "2024-10-08"
+    }
+   ],
+   "first_fixed": "2024-10-08"
+  },
+  {
+   "cve": "CVE-2024-43485",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-43485",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.0-rc.2",
+     "date": "2024-10-08"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.10",
+     "date": "2024-10-08"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.35",
+     "date": "2024-10-08"
+    }
+   ],
+   "first_fixed": "2024-10-08"
+  },
+  {
+   "cve": "CVE-2024-43484",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-43484",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.0-rc.2",
+     "date": "2024-10-08"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.10",
+     "date": "2024-10-08"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.35",
+     "date": "2024-10-08"
+    }
+   ],
+   "first_fixed": "2024-10-08"
+  },
+  {
+   "cve": "CVE-2024-38229",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-38229",
+   "fixed_in": [
+    {
+     "channel": "9.0",
+     "release": "9.0.0-rc.2",
+     "date": "2024-10-08"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.10",
+     "date": "2024-10-08"
+    }
+   ],
+   "first_fixed": "2024-10-08"
+  },
+  {
+   "cve": "CVE-2024-38167",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-38167",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.8",
+     "date": "2024-09-24"
+    }
+   ],
+   "first_fixed": "2024-09-24"
+  },
+  {
+   "cve": "CVE-2024-38168",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-38168",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.8",
+     "date": "2024-09-24"
+    }
+   ],
+   "first_fixed": "2024-09-24"
+  },
+  {
+   "cve": "CVE-2024-38095",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-38095",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.7",
+     "date": "2024-07-09"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.32",
+     "date": "2024-07-09"
+    }
+   ],
+   "first_fixed": "2024-07-09"
+  },
+  {
+   "cve": "CVE-2024-35264",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-35264",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.7",
+     "date": "2024-07-09"
+    }
+   ],
+   "first_fixed": "2024-07-09"
+  },
+  {
+   "cve": "CVE-2024-30105",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-30105",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.7",
+     "date": "2024-07-09"
+    }
+   ],
+   "first_fixed": "2024-07-09"
+  },
+  {
+   "cve": "CVE-2024-38081",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-38081",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.32",
+     "date": "2024-07-09"
+    }
+   ],
+   "first_fixed": "2024-07-09"
+  },
+  {
+   "cve": "CVE-2024-20672",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-20672",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.20",
+     "date": "2024-05-28"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.31",
+     "date": "2024-05-28"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.6",
+     "date": "2024-06-11"
+    }
+   ],
+   "first_fixed": "2024-05-28"
+  },
+  {
+   "cve": "CVE-2024-30045",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-30045",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.5",
+     "date": "2024-05-14"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.19",
+     "date": "2024-05-14"
+    }
+   ],
+   "first_fixed": "2024-05-14"
+  },
+  {
+   "cve": "CVE-2024-30046",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-30046",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.5",
+     "date": "2024-05-14"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.19",
+     "date": "2024-05-14"
+    }
+   ],
+   "first_fixed": "2024-05-14"
+  },
+  {
+   "cve": "CVE-2024-21409",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21409",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.4",
+     "date": "2024-04-09"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.18",
+     "date": "2024-04-09"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.29",
+     "date": "2024-04-09"
+    }
+   ],
+   "first_fixed": "2024-04-09"
+  },
+  {
+   "cve": "CVE-2024-26190",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26190",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.3",
+     "date": "2024-03-12"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.17",
+     "date": "2024-03-12"
+    }
+   ],
+   "first_fixed": "2024-03-12"
+  },
+  {
+   "cve": "CVE-2024-21392",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21392",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.3",
+     "date": "2024-03-12"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.17",
+     "date": "2024-03-12"
+    }
+   ],
+   "first_fixed": "2024-03-12"
+  },
+  {
+   "cve": "CVE-2024-21386",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21386",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.2",
+     "date": "2024-02-13"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.16",
+     "date": "2024-02-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.27",
+     "date": "2024-02-13"
+    }
+   ],
+   "first_fixed": "2024-02-13"
+  },
+  {
+   "cve": "CVE-2024-21404",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21404",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.2",
+     "date": "2024-02-13"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.16",
+     "date": "2024-02-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.27",
+     "date": "2024-02-13"
+    }
+   ],
+   "first_fixed": "2024-02-13"
+  },
+  {
+   "cve": "CVE-2024-0056",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-0056",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.1",
+     "date": "2024-01-09"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.15",
+     "date": "2024-01-09"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.26",
+     "date": "2024-01-09"
+    }
+   ],
+   "first_fixed": "2024-01-09"
+  },
+  {
+   "cve": "CVE-2024-0057",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-0057",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.1",
+     "date": "2024-01-09"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.15",
+     "date": "2024-01-09"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.26",
+     "date": "2024-01-09"
+    }
+   ],
+   "first_fixed": "2024-01-09"
+  },
+  {
+   "cve": "CVE-2024-21319",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21319",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.1",
+     "date": "2024-01-09"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.15",
+     "date": "2024-01-09"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.26",
+     "date": "2024-01-09"
+    }
+   ],
+   "first_fixed": "2024-01-09"
+  },
+  {
+   "cve": "CVE-2023-36049",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36049",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.0",
+     "date": "2023-11-14"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.14",
+     "date": "2023-11-14"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.25",
+     "date": "2023-11-14"
+    }
+   ],
+   "first_fixed": "2023-11-14"
+  },
+  {
+   "cve": "CVE-2023-36558",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36558",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.0",
+     "date": "2023-11-14"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.14",
+     "date": "2023-11-14"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.25",
+     "date": "2023-11-14"
+    }
+   ],
+   "first_fixed": "2023-11-14"
+  },
+  {
+   "cve": "CVE-2023-36038",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36038",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.0",
+     "date": "2023-11-14"
+    }
+   ],
+   "first_fixed": "2023-11-14"
+  },
+  {
+   "cve": "CVE-2023-36435",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36435",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.0-rc.2",
+     "date": "2023-10-10"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.12",
+     "date": "2023-10-10"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.13",
+     "date": "2023-10-24"
+    }
+   ],
+   "first_fixed": "2023-10-10"
+  },
+  {
+   "cve": "CVE-2023-38171",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-38171",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.0-rc.2",
+     "date": "2023-10-10"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.12",
+     "date": "2023-10-10"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.13",
+     "date": "2023-10-24"
+    }
+   ],
+   "first_fixed": "2023-10-10"
+  },
+  {
+   "cve": "CVE-2023-44487",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-44487",
+   "fixed_in": [
+    {
+     "channel": "8.0",
+     "release": "8.0.0-rc.2",
+     "date": "2023-10-10"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.12",
+     "date": "2023-10-10"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.23",
+     "date": "2023-10-10"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.13",
+     "date": "2023-10-24"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.24",
+     "date": "2023-10-24"
+    }
+   ],
+   "first_fixed": "2023-10-10"
+  },
+  {
+   "cve": "CVE-2023-36799",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36799",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.11",
+     "date": "2023-09-12"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.22",
+     "date": "2023-09-12"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.0-rc.1",
+     "date": "2023-09-14"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.13",
+     "date": "2023-10-24"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.24",
+     "date": "2023-10-24"
+    }
+   ],
+   "first_fixed": "2023-09-12"
+  },
+  {
+   "cve": "CVE-2023-36796",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36796",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.11",
+     "date": "2023-09-12"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.22",
+     "date": "2023-09-12"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.0-rc.1",
+     "date": "2023-09-14"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.13",
+     "date": "2023-10-24"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.24",
+     "date": "2023-10-24"
+    }
+   ],
+   "first_fixed": "2023-09-12"
+  },
+  {
+   "cve": "CVE-2023-36792",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36792",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.11",
+     "date": "2023-09-12"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.22",
+     "date": "2023-09-12"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.0-rc.1",
+     "date": "2023-09-14"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.13",
+     "date": "2023-10-24"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.24",
+     "date": "2023-10-24"
+    }
+   ],
+   "first_fixed": "2023-09-12"
+  },
+  {
+   "cve": "CVE-2023-36794",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36794",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.11",
+     "date": "2023-09-12"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.22",
+     "date": "2023-09-12"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.0-rc.1",
+     "date": "2023-09-14"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.13",
+     "date": "2023-10-24"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.24",
+     "date": "2023-10-24"
+    }
+   ],
+   "first_fixed": "2023-09-12"
+  },
+  {
+   "cve": "CVE-2023-36793",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36793",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.11",
+     "date": "2023-09-12"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.22",
+     "date": "2023-09-12"
+    },
+    {
+     "channel": "8.0",
+     "release": "8.0.0-rc.1",
+     "date": "2023-09-14"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.13",
+     "date": "2023-10-24"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.24",
+     "date": "2023-10-24"
+    }
+   ],
+   "first_fixed": "2023-09-12"
+  },
+  {
+   "cve": "CVE-2023-35390",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-35390",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.10",
+     "date": "2023-08-08"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.21",
+     "date": "2023-08-08"
+    }
+   ],
+   "first_fixed": "2023-08-08"
+  },
+  {
+   "cve": "CVE-2023-35391",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-35391",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.10",
+     "date": "2023-08-08"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.21",
+     "date": "2023-08-08"
+    }
+   ],
+   "first_fixed": "2023-08-08"
+  },
+  {
+   "cve": "CVE-2023-38178",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-38178",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.10",
+     "date": "2023-08-08"
+    }
+   ],
+   "first_fixed": "2023-08-08"
+  },
+  {
+   "cve": "CVE-2023-38180",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-38180",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.10",
+     "date": "2023-08-08"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.21",
+     "date": "2023-08-08"
+    }
+   ],
+   "first_fixed": "2023-08-08"
+  },
+  {
+   "cve": "CVE-2023-33127",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-33127",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.9",
+     "date": "2023-07-11"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.20",
+     "date": "2023-07-11"
+    }
+   ],
+   "first_fixed": "2023-07-11"
+  },
+  {
+   "cve": "CVE-2023-33170",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-33170",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.9",
+     "date": "2023-07-11"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.20",
+     "date": "2023-07-11"
+    }
+   ],
+   "first_fixed": "2023-07-11"
+  },
+  {
+   "cve": "CVE-2023-24895",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-24895",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.7",
+     "date": "2023-06-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.18",
+     "date": "2023-06-13"
+    }
+   ],
+   "first_fixed": "2023-06-13"
+  },
+  {
+   "cve": "CVE-2023-24897",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-24897",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.7",
+     "date": "2023-06-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.18",
+     "date": "2023-06-13"
+    }
+   ],
+   "first_fixed": "2023-06-13"
+  },
+  {
+   "cve": "CVE-2023-24936",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-24936",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.7",
+     "date": "2023-06-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.18",
+     "date": "2023-06-13"
+    }
+   ],
+   "first_fixed": "2023-06-13"
+  },
+  {
+   "cve": "CVE-2023-29331",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-29331",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.7",
+     "date": "2023-06-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.18",
+     "date": "2023-06-13"
+    }
+   ],
+   "first_fixed": "2023-06-13"
+  },
+  {
+   "cve": "CVE-2023-29337",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-29337",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.7",
+     "date": "2023-06-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.18",
+     "date": "2023-06-13"
+    }
+   ],
+   "first_fixed": "2023-06-13"
+  },
+  {
+   "cve": "CVE-2023-32032",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-32032",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.7",
+     "date": "2023-06-13"
+    }
+   ],
+   "first_fixed": "2023-06-13"
+  },
+  {
+   "cve": "CVE-2023-33126",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-33126",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.7",
+     "date": "2023-06-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.18",
+     "date": "2023-06-13"
+    }
+   ],
+   "first_fixed": "2023-06-13"
+  },
+  {
+   "cve": "CVE-2023-33128",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-33128",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.7",
+     "date": "2023-06-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.18",
+     "date": "2023-06-13"
+    }
+   ],
+   "first_fixed": "2023-06-13"
+  },
+  {
+   "cve": "CVE-2023-33135",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-33135",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.7",
+     "date": "2023-06-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.18",
+     "date": "2023-06-13"
+    }
+   ],
+   "first_fixed": "2023-06-13"
+  },
+  {
+   "cve": "CVE-2023-28260",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28260",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.5",
+     "date": "2023-04-11"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.16",
+     "date": "2023-04-11"
+    }
+   ],
+   "first_fixed": "2023-04-11"
+  },
+  {
+   "cve": "CVE-2023-21808",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-21808",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.3",
+     "date": "2023-02-14"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.14",
+     "date": "2023-02-14"
+    }
+   ],
+   "first_fixed": "2023-02-14"
+  },
+  {
+   "cve": "CVE-2023-21538",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-21538",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.13",
+     "date": "2023-01-10"
+    }
+   ],
+   "first_fixed": "2023-01-10"
+  },
+  {
+   "cve": "CVE-2022-41089",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41089",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.1",
+     "date": "2022-12-13"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.12",
+     "date": "2022-12-13"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.32",
+     "date": "2022-12-13"
+    }
+   ],
+   "first_fixed": "2022-12-13"
+  },
+  {
+   "cve": "CVE-2022-41032",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41032",
+   "fixed_in": [
+    {
+     "channel": "7.0",
+     "release": "7.0.0-rc.2",
+     "date": "2022-10-11"
+    },
+    {
+     "channel": "6.0",
+     "release": "6.0.10",
+     "date": "2022-10-11"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.30",
+     "date": "2022-10-11"
+    }
+   ],
+   "first_fixed": "2022-10-11"
+  },
+  {
+   "cve": "CVE-2022-38013",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-38013",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.9",
+     "date": "2022-09-13"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.29",
+     "date": "2022-09-13"
+    },
+    {
+     "channel": "7.0",
+     "release": "7.0.0-rc.1",
+     "date": "2022-09-14"
+    }
+   ],
+   "first_fixed": "2022-09-13"
+  },
+  {
+   "cve": "CVE-2022-34716",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-34716",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.8",
+     "date": "2022-08-09"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.28",
+     "date": "2022-08-09"
+    }
+   ],
+   "first_fixed": "2022-08-09"
+  },
+  {
+   "cve": "CVE-2022-30184",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-30184",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.6",
+     "date": "2022-06-14"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.26",
+     "date": "2022-06-14"
+    }
+   ],
+   "first_fixed": "2022-06-14"
+  },
+  {
+   "cve": "CVE-2022-29117",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29117",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.5",
+     "date": "2022-05-10"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.17",
+     "date": "2022-05-10"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.25",
+     "date": "2022-05-10"
+    }
+   ],
+   "first_fixed": "2022-05-10"
+  },
+  {
+   "cve": "CVE-2022-23267",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23267",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.5",
+     "date": "2022-05-10"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.17",
+     "date": "2022-05-10"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.25",
+     "date": "2022-05-10"
+    }
+   ],
+   "first_fixed": "2022-05-10"
+  },
+  {
+   "cve": "CVE-2022-29145",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29145",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.5",
+     "date": "2022-05-10"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.17",
+     "date": "2022-05-10"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.25",
+     "date": "2022-05-10"
+    }
+   ],
+   "first_fixed": "2022-05-10"
+  },
+  {
+   "cve": "CVE-2022-24464",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24464",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.3",
+     "date": "2022-03-08"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.15",
+     "date": "2022-03-08"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.23",
+     "date": "2022-03-08"
+    }
+   ],
+   "first_fixed": "2022-03-08"
+  },
+  {
+   "cve": "CVE-2022-24512",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24512",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.3",
+     "date": "2022-03-08"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.15",
+     "date": "2022-03-08"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.23",
+     "date": "2022-03-08"
+    }
+   ],
+   "first_fixed": "2022-03-08"
+  },
+  {
+   "cve": "CVE-2020-8927",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8927",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.3",
+     "date": "2022-03-08"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.15",
+     "date": "2022-03-08"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.23",
+     "date": "2022-03-08"
+    }
+   ],
+   "first_fixed": "2022-03-08"
+  },
+  {
+   "cve": "CVE-2022-21986",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21986",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.2",
+     "date": "2022-02-08"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.14",
+     "date": "2022-02-08"
+    }
+   ],
+   "first_fixed": "2022-02-08"
+  },
+  {
+   "cve": "CVE-2021-43877",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43877",
+   "fixed_in": [
+    {
+     "channel": "6.0",
+     "release": "6.0.1",
+     "date": "2021-12-14"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.13",
+     "date": "2021-12-14"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.22",
+     "date": "2021-12-14"
+    }
+   ],
+   "first_fixed": "2021-12-14"
+  },
+  {
+   "cve": "CVE-2021-41355",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41355",
+   "fixed_in": [
+    {
+     "channel": "5.0",
+     "release": "5.0.11",
+     "date": "2021-10-12"
+    }
+   ],
+   "first_fixed": "2021-10-12"
+  },
+  {
+   "cve": "CVE-2021-26423",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-26423",
+   "fixed_in": [
+    {
+     "channel": "5.0",
+     "release": "5.0.9",
+     "date": "2021-08-10"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.18",
+     "date": "2021-08-10"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.30",
+     "date": "2021-08-19"
+    }
+   ],
+   "first_fixed": "2021-08-10"
+  },
+  {
+   "cve": "CVE-2021-34485",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34485",
+   "fixed_in": [
+    {
+     "channel": "5.0",
+     "release": "5.0.9",
+     "date": "2021-08-10"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.18",
+     "date": "2021-08-10"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.30",
+     "date": "2021-08-19"
+    }
+   ],
+   "first_fixed": "2021-08-10"
+  },
+  {
+   "cve": "CVE-2021-34532",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34532",
+   "fixed_in": [
+    {
+     "channel": "5.0",
+     "release": "5.0.9",
+     "date": "2021-08-10"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.18",
+     "date": "2021-08-10"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.30",
+     "date": "2021-08-19"
+    }
+   ],
+   "first_fixed": "2021-08-10"
+  },
+  {
+   "cve": "CVE-2021-31957",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31957",
+   "fixed_in": [
+    {
+     "channel": "5.0",
+     "release": "5.0.7",
+     "date": "2021-06-08"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.16",
+     "date": "2021-06-08"
+    }
+   ],
+   "first_fixed": "2021-06-08"
+  },
+  {
+   "cve": "CVE-2021-31204",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31204",
+   "fixed_in": [
+    {
+     "channel": "3.1",
+     "release": "3.1.15",
+     "date": "2021-05-11"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.6",
+     "date": "2021-05-25"
+    }
+   ],
+   "first_fixed": "2021-05-11"
+  },
+  {
+   "cve": "CVE-2021-26701",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-26701",
+   "fixed_in": [
+    {
+     "channel": "5.0",
+     "release": "5.0.4",
+     "date": "2021-03-09"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.13",
+     "date": "2021-03-09"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.26",
+     "date": "2021-03-09"
+    }
+   ],
+   "first_fixed": "2021-03-09"
+  },
+  {
+   "cve": "CVE-2021-1721",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-1721",
+   "fixed_in": [
+    {
+     "channel": "3.1",
+     "release": "3.1.12",
+     "date": "2021-02-09"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.25",
+     "date": "2021-02-09"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.3",
+     "date": "2021-03-02"
+    }
+   ],
+   "first_fixed": "2021-02-09"
+  },
+  {
+   "cve": "CVE-2021-24112",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-24112",
+   "fixed_in": [
+    {
+     "channel": "3.1",
+     "release": "3.1.12",
+     "date": "2021-02-09"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.25",
+     "date": "2021-02-09"
+    },
+    {
+     "channel": "5.0",
+     "release": "5.0.3",
+     "date": "2021-03-02"
+    }
+   ],
+   "first_fixed": "2021-02-09"
+  },
+  {
+   "cve": "CVE-2021-1723",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-1723",
+   "fixed_in": [
+    {
+     "channel": "5.0",
+     "release": "5.0.2",
+     "date": "2021-01-12"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.11",
+     "date": "2021-01-12"
+    }
+   ],
+   "first_fixed": "2021-01-12"
+  },
+  {
+   "cve": " CVE-2020-1045",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1045",
+   "fixed_in": [
+    {
+     "channel": "3.1",
+     "release": "3.1.8",
+     "date": "2020-09-08"
+    }
+   ],
+   "first_fixed": "2020-09-08"
+  },
+  {
+   "cve": "CVE-2020-1045 ",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1045",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.22",
+     "date": "2020-09-08"
+    }
+   ],
+   "first_fixed": "2020-09-08"
+  },
+  {
+   "cve": "CVE-2020-1597",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1597",
+   "fixed_in": [
+    {
+     "channel": "3.1",
+     "release": "3.1.7",
+     "date": "2020-08-11"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.21",
+     "date": "2020-08-11"
+    }
+   ],
+   "first_fixed": "2020-08-11"
+  },
+  {
+   "cve": "CVE-2020-1147",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1147",
+   "fixed_in": [
+    {
+     "channel": "3.1",
+     "release": "3.1.6",
+     "date": "2020-07-14"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.20",
+     "date": "2020-07-14"
+    }
+   ],
+   "first_fixed": "2020-07-14"
+  },
+  {
+   "cve": "CVE-2020-1108",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1108",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.18",
+     "date": "2020-05-12"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.4",
+     "date": "2020-05-19"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.5",
+     "date": "2020-06-09"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.19",
+     "date": "2020-06-09"
+    }
+   ],
+   "first_fixed": "2020-05-12"
+  },
+  {
+   "cve": "CVE-2020-1161",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1161",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.18",
+     "date": "2020-05-12"
+    },
+    {
+     "channel": "3.1",
+     "release": "3.1.4",
+     "date": "2020-05-19"
+    }
+   ],
+   "first_fixed": "2020-05-12"
+  },
+  {
+   "cve": " CVE-2020-0602",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0602",
+   "fixed_in": [
+    {
+     "channel": "3.1",
+     "release": "3.1.1",
+     "date": "2020-01-14"
+    }
+   ],
+   "first_fixed": "2020-01-14"
+  },
+  {
+   "cve": " CVE-2020-0603",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0603",
+   "fixed_in": [
+    {
+     "channel": "3.1",
+     "release": "3.1.1",
+     "date": "2020-01-14"
+    },
+    {
+     "channel": "3.0",
+     "release": "3.0.2",
+     "date": "2020-01-14"
+    }
+   ],
+   "first_fixed": "2020-01-14"
+  },
+  {
+   "cve": " CVE-2020-0605",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0605",
+   "fixed_in": [
+    {
+     "channel": "3.1",
+     "release": "3.1.1",
+     "date": "2020-01-14"
+    },
+    {
+     "channel": "3.0",
+     "release": "3.0.2",
+     "date": "2020-01-14"
+    }
+   ],
+   "first_fixed": "2020-01-14"
+  },
+  {
+   "cve": " CVE-2020-0606",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0606",
+   "fixed_in": [
+    {
+     "channel": "3.1",
+     "release": "3.1.1",
+     "date": "2020-01-14"
+    },
+    {
+     "channel": "3.0",
+     "release": "3.0.2",
+     "date": "2020-01-14"
+    }
+   ],
+   "first_fixed": "2020-01-14"
+  },
+  {
+   "cve": "CVE-2020-0602",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0602",
+   "fixed_in": [
+    {
+     "channel": "3.0",
+     "release": "3.0.2",
+     "date": "2020-01-14"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.15",
+     "date": "2020-01-14"
+    }
+   ],
+   "first_fixed": "2020-01-14"
+  },
+  {
+   "cve": "CVE-2020-0603",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0603",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.15",
+     "date": "2020-01-14"
+    }
+   ],
+   "first_fixed": "2020-01-14"
+  },
+  {
+   "cve": "CVE-2018-8269",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8269",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.13",
+     "date": "2019-09-10"
+    }
+   ],
+   "first_fixed": "2019-09-10"
+  },
+  {
+   "cve": "CVE-2019-1301",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1301",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.13",
+     "date": "2019-09-10"
+    }
+   ],
+   "first_fixed": "2019-09-10"
+  },
+  {
+   "cve": "CVE-2019-1302",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1302",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.13",
+     "date": "2019-09-10"
+    }
+   ],
+   "first_fixed": "2019-09-10"
+  },
+  {
+   "cve": " CVE-2018-8269",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8269",
+   "fixed_in": [
+    {
+     "channel": "2.2",
+     "release": "2.2.7",
+     "date": "2019-09-10"
+    }
+   ],
+   "first_fixed": "2019-09-10"
+  },
+  {
+   "cve": " CVE-2019-1301",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1301",
+   "fixed_in": [
+    {
+     "channel": "2.2",
+     "release": "2.2.7",
+     "date": "2019-09-10"
+    }
+   ],
+   "first_fixed": "2019-09-10"
+  },
+  {
+   "cve": " CVE-2019-1302",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1302",
+   "fixed_in": [
+    {
+     "channel": "2.2",
+     "release": "2.2.7",
+     "date": "2019-09-10"
+    }
+   ],
+   "first_fixed": "2019-09-10"
+  },
+  {
+   "cve": "CVE-2019-1075",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1075",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.12",
+     "date": "2019-07-09"
+    }
+   ],
+   "first_fixed": "2019-07-09"
+  },
+  {
+   "cve": " CVE-2019-1075",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1075",
+   "fixed_in": [
+    {
+     "channel": "2.2",
+     "release": "2.2.6",
+     "date": "2019-07-09"
+    }
+   ],
+   "first_fixed": "2019-07-09"
+  },
+  {
+   "cve": "CVE-2019-0976",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0976",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.604",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "2.2",
+     "release": "2.2.204",
+     "date": "2019-05-14"
+    }
+   ],
+   "first_fixed": "2019-05-14"
+  },
+  {
+   "cve": "CVE-2019-0820",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0820",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.11",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "2.2",
+     "release": "2.2.5",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.13",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.16",
+     "date": "2019-05-14"
+    }
+   ],
+   "first_fixed": "2019-05-14"
+  },
+  {
+   "cve": "CVE-2019-0980",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0980",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.11",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "2.2",
+     "release": "2.2.5",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.13",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.16",
+     "date": "2019-05-14"
+    }
+   ],
+   "first_fixed": "2019-05-14"
+  },
+  {
+   "cve": "CVE-2019-0981",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0981",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.11",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "2.2",
+     "release": "2.2.5",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.13",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.16",
+     "date": "2019-05-14"
+    }
+   ],
+   "first_fixed": "2019-05-14"
+  },
+  {
+   "cve": "CVE-2019-0982",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0982",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.11",
+     "date": "2019-05-14"
+    },
+    {
+     "channel": "2.2",
+     "release": "2.2.5",
+     "date": "2019-05-14"
+    }
+   ],
+   "first_fixed": "2019-05-14"
+  },
+  {
+   "cve": "CVE-2019-0815",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0815",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.603",
+     "date": "2019-04-09"
+    },
+    {
+     "channel": "2.1",
+     "release": "2.1.10",
+     "date": "2019-04-09"
+    }
+   ],
+   "first_fixed": "2019-04-09"
+  },
+  {
+   "cve": " CVE-2019-0815",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0815",
+   "fixed_in": [
+    {
+     "channel": "2.2",
+     "release": "2.2.203",
+     "date": "2019-04-09"
+    },
+    {
+     "channel": "2.2",
+     "release": "2.2.4",
+     "date": "2019-04-09"
+    }
+   ],
+   "first_fixed": "2019-04-09"
+  },
+  {
+   "cve": "CVE-2019-0757",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0757",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.9",
+     "date": "2019-03-12"
+    }
+   ],
+   "first_fixed": "2019-03-12"
+  },
+  {
+   "cve": " CVE-2019-0757",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0757",
+   "fixed_in": [
+    {
+     "channel": "2.2",
+     "release": "2.2.3",
+     "date": "2019-03-12"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.12",
+     "date": "2019-03-12"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.15",
+     "date": "2019-03-12"
+    }
+   ],
+   "first_fixed": "2019-03-12"
+  },
+  {
+   "cve": "CVE-2019-0657",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0657",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.8",
+     "date": "2019-02-12"
+    }
+   ],
+   "first_fixed": "2019-02-12"
+  },
+  {
+   "cve": " CVE-2019-0657",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0657",
+   "fixed_in": [
+    {
+     "channel": "2.2",
+     "release": "2.2.2",
+     "date": "2019-02-12"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.11",
+     "date": "2019-02-12"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.14",
+     "date": "2019-02-12"
+    }
+   ],
+   "first_fixed": "2019-02-12"
+  },
+  {
+   "cve": "CVE-2019-0545",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0545",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.7",
+     "date": "2019-01-08"
+    }
+   ],
+   "first_fixed": "2019-01-08"
+  },
+  {
+   "cve": "CVE-2019-0564",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0564",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.7",
+     "date": "2019-01-08"
+    }
+   ],
+   "first_fixed": "2019-01-08"
+  },
+  {
+   "cve": "CVE-2019-0548",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0548",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.7",
+     "date": "2019-01-08"
+    }
+   ],
+   "first_fixed": "2019-01-08"
+  },
+  {
+   "cve": "CVE-2018-8416",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8416",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.7",
+     "date": "2019-01-08"
+    }
+   ],
+   "first_fixed": "2019-01-08"
+  },
+  {
+   "cve": " CVE-2019-0545",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0545",
+   "fixed_in": [
+    {
+     "channel": "2.2",
+     "release": "2.2.1",
+     "date": "2019-01-08"
+    },
+    {
+     "channel": "2.2",
+     "release": "2.2.103",
+     "date": "2019-01-16"
+    }
+   ],
+   "first_fixed": "2019-01-08"
+  },
+  {
+   "cve": " CVE-2019-0564",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0564",
+   "fixed_in": [
+    {
+     "channel": "2.2",
+     "release": "2.2.1",
+     "date": "2019-01-08"
+    },
+    {
+     "channel": "2.2",
+     "release": "2.2.103",
+     "date": "2019-01-16"
+    }
+   ],
+   "first_fixed": "2019-01-08"
+  },
+  {
+   "cve": " CVE-2019-0548",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0548",
+   "fixed_in": [
+    {
+     "channel": "2.2",
+     "release": "2.2.1",
+     "date": "2019-01-08"
+    },
+    {
+     "channel": "2.2",
+     "release": "2.2.103",
+     "date": "2019-01-16"
+    }
+   ],
+   "first_fixed": "2019-01-08"
+  },
+  {
+   "cve": "CVE-2018-8292",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8292",
+   "fixed_in": [
+    {
+     "channel": "1.1",
+     "release": "1.1.10",
+     "date": "2018-10-09"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.13",
+     "date": "2018-10-09"
+    }
+   ],
+   "first_fixed": "2018-10-09"
+  },
+  {
+   "cve": "CVE-2018-8409",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-8409",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.4",
+     "date": "2018-09-11"
+    }
+   ],
+   "first_fixed": "2018-09-11"
+  },
+  {
+   "cve": "CVE-2018-8171",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8171",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.2",
+     "date": "2018-07-10"
+    },
+    {
+     "channel": "2.0",
+     "release": "2.0.9",
+     "date": "2018-07-10"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.9",
+     "date": "2018-07-10"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.12",
+     "date": "2018-07-10"
+    }
+   ],
+   "first_fixed": "2018-07-10"
+  },
+  {
+   "cve": "CVE-2018-8356",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8356",
+   "fixed_in": [
+    {
+     "channel": "2.1",
+     "release": "2.1.2",
+     "date": "2018-07-10"
+    },
+    {
+     "channel": "2.0",
+     "release": "2.0.9",
+     "date": "2018-07-10"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.9",
+     "date": "2018-07-10"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.12",
+     "date": "2018-07-10"
+    }
+   ],
+   "first_fixed": "2018-07-10"
+  },
+  {
+   "cve": "CVE-2018-0765",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0765",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.8",
+     "date": "2018-05-08"
+    }
+   ],
+   "first_fixed": "2018-05-08"
+  },
+  {
+   "cve": "CVE-2018-0875",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0875",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.6",
+     "date": "2018-03-13"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.7",
+     "date": "2018-03-13"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.10",
+     "date": "2018-03-13"
+    }
+   ],
+   "first_fixed": "2018-03-13"
+  },
+  {
+   "cve": "CVE-2018-0808",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0808",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.6",
+     "date": "2018-03-13"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.7",
+     "date": "2018-03-13"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.10",
+     "date": "2018-03-13"
+    }
+   ],
+   "first_fixed": "2018-03-13"
+  },
+  {
+   "cve": "CVE-2018-0787",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0787",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.5",
+     "date": "2018-01-09"
+    }
+   ],
+   "first_fixed": "2018-01-09"
+  },
+  {
+   "cve": "CVE-2018-0786",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0786",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.5",
+     "date": "2018-01-09"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.9",
+     "date": "2018-01-09"
+    }
+   ],
+   "first_fixed": "2018-01-09"
+  },
+  {
+   "cve": "CVE-2018-0785",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0785",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.5",
+     "date": "2018-01-09"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.6",
+     "date": "2018-01-09"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.9",
+     "date": "2018-01-09"
+    }
+   ],
+   "first_fixed": "2018-01-09"
+  },
+  {
+   "cve": "CVE-2018-0784",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0784",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.5",
+     "date": "2018-01-09"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.6",
+     "date": "2018-01-09"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.9",
+     "date": "2018-01-09"
+    }
+   ],
+   "first_fixed": "2018-01-09"
+  },
+  {
+   "cve": "CVE-2018-0764",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0764",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.5",
+     "date": "2018-01-09"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.6",
+     "date": "2018-01-09"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.9",
+     "date": "2018-01-09"
+    }
+   ],
+   "first_fixed": "2018-01-09"
+  },
+  {
+   "cve": "CVE-2017-8700",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8700",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.3",
+     "date": "2017-11-14"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.5",
+     "date": "2017-11-14"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.8",
+     "date": "2017-11-14"
+    }
+   ],
+   "first_fixed": "2017-11-14"
+  },
+  {
+   "cve": "CVE-2017-11770",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11770",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.3",
+     "date": "2017-11-14"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.5",
+     "date": "2017-11-14"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.8",
+     "date": "2017-11-14"
+    }
+   ],
+   "first_fixed": "2017-11-14"
+  },
+  {
+   "cve": "CVE-2017-11879",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11879",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.3",
+     "date": "2017-11-14"
+    }
+   ],
+   "first_fixed": "2017-11-14"
+  },
+  {
+   "cve": "CVE-2017-11883",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11883",
+   "fixed_in": [
+    {
+     "channel": "2.0",
+     "release": "2.0.3",
+     "date": "2017-11-14"
+    },
+    {
+     "channel": "1.1",
+     "release": "1.1.5",
+     "date": "2017-11-14"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.8",
+     "date": "2017-11-14"
+    }
+   ],
+   "first_fixed": "2017-11-14"
+  },
+  {
+   "cve": "CVE-2017-8585",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8585",
+   "fixed_in": [
+    {
+     "channel": "1.1",
+     "release": "1.1.4",
+     "date": "2017-09-21"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.7",
+     "date": "2017-09-21"
+    }
+   ],
+   "first_fixed": "2017-09-21"
+  },
+  {
+   "cve": "CVE-2017-0247",
+   "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0247",
+   "fixed_in": [
+    {
+     "channel": "1.1",
+     "release": "1.1.2",
+     "date": "2017-05-09"
+    },
+    {
+     "channel": "1.0",
+     "release": "1.0.5",
+     "date": "2017-05-09"
+    }
+   ],
+   "first_fixed": "2017-05-09"
+  }
+ ]
+}

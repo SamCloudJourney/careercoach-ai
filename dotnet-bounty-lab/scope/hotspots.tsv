@@ -34,7 +34,7 @@ Form / multipart / query parsing	aspnetcore/src/Http/WebUtilities	limits, encodi
 Header value parsers	aspnetcore/src/Http/Headers	Set-Cookie, Content-Disposition, media types	labfuzz aspnet-headers
 MVC model binding	aspnetcore/src/Mvc/Mvc.Core/src/ModelBinding	over-posting, type confusion, limits	none yet
 Project templates (explicitly in scope)	aspnetcore/src/ProjectTemplates	insecure defaults, sample code	scripts/09-template-audit.sh
-GitHub Actions (explicitly in scope)	aspnetcore/.github/workflows	workflow injection, pwn-request, token scope	scripts/09-template-audit.sh (workflow lint)
+GitHub Actions (explicitly in scope)	aspnetcore/.github/workflows	workflow injection, pwn-request, token scope	scripts/09-template-audit.sh (live workflow lint)
 HttpClient / SocketsHttpHandler	runtime/src/libraries/System.Net.Http/src/System/Net/Http/SocketsHttpHandler	response parsing, redirects, decompression, connection reuse	labfuzz net-http-headers
 TLS (SslStream)	runtime/src/libraries/System.Net.Security/src	certificate validation, renegotiation, SNI	none yet
 QUIC (System.Net.Quic)	runtime/src/libraries/System.Net.Quic/src	msquic interop, stream lifetime	none yet
@@ -63,7 +63,7 @@ CoreCLR VM	runtime/src/coreclr/vm	type loader, verifier, JIT interface, unsafe a
 Metadata reader (native)	runtime/src/coreclr/md	malformed PE/metadata	none yet
 Diagnostics / debugger transport	runtime/src/coreclr/debug	diagnostic IPC, dump creation	none yet
 Mono runtime	runtime/src/mono/mono	interpreter, AOT, WASM runtime	none yet
-GitHub Actions (runtime)	runtime/.github/workflows	workflow injection, token scope	scripts/09-template-audit.sh (workflow lint)
+GitHub Actions (runtime)	runtime/.github/workflows	workflow injection, token scope	scripts/09-template-audit.sh (live workflow lint)
 dotnet CLI	sdk/src/Cli	tool install, workload, restore, path handling	none yet
 SDK template feed (explicitly in scope)	sdk/template_feed	insecure template defaults	scripts/09-template-audit.sh
 SDK resolvers	sdk/src/Resolvers	SDK resolution, global.json, path hijack	none yet

@@ -53,10 +53,15 @@ try:
             v = pinned[ch]
             if r["latest-release"] != v["runtime"]:
                 drift.append(f".NET {ch}: latest runtime is {r['latest-release']} (manifest {v['runtime']}) - repro must use the latest patch")
-            elif r["latest-sdk"] != v["sdk"]:
-                drift.append(f".NET {ch}: latest SDK is {r['latest-sdk']} (manifest {v['sdk']})")
             else:
-                ok.append(f".NET {ch} {phase}: runtime {v['runtime']} / SDK {v['sdk']} current (EOL {r.get('eol-date')})")
+                # every SDK feature band shipped with the latest patch is in scope (e.g. 10.0.404 and 10.0.115)
+                rel = json.loads(get(r["releases.json"]))["releases"][0]
+                shipped = sorted(s["version"] for s in rel.get("sdks", []))
+                pinned_sdks = sorted(v.get("sdks", [v["sdk"]]))
+                if shipped != pinned_sdks:
+                    drift.append(f".NET {ch}: release {rel['release-version']} ships SDKs {shipped} (manifest {pinned_sdks})")
+                else:
+                    ok.append(f".NET {ch} {phase}: runtime {v['runtime']} / SDKs {', '.join(shipped)} current (EOL {r.get('eol-date')})")
         elif phase in ("preview", "go-live"):
             if "-rc." in r["latest-release"]:
                 drift.append(f".NET {ch} RC available ({r['latest-release']}): release candidates ARE in scope - add it")
@@ -69,6 +74,22 @@ try:
             drift.append(f".NET {ch} EOL date {v['eol']} has passed")
 except Exception as e:
     drift.append(f"could not fetch release metadata: {e}")
+
+# 2b. ASP.NET Core 2.3 on .NET Framework: latest 2.3.x on NuGet, and the commit it was built from
+try:
+    a = m["versions"]["aspnetcore_on_netfx"]
+    pkg = a["nuget_probe"]
+    vers = [x for x in json.loads(get(f"https://api.nuget.org/v3-flatcontainer/{pkg}/index.json"))["versions"]
+            if re.fullmatch(r"2\.\d+\.\d+", x)]
+    latest = max(vers, key=lambda x: tuple(map(int, x.split("."))))
+    spec = get(f"https://api.nuget.org/v3-flatcontainer/{pkg}/{latest}/{pkg}.nuspec")
+    commit = (re.search(r'commit="([0-9a-f]+)"', spec) or [None, None])[1]
+    if latest != a["latest"] or commit != a["commit"]:
+        drift.append(f"ASP.NET Core 2.x latest is {latest} @ {commit[:12] if commit else '?'} (manifest {a['latest']} @ {a['commit'][:12]})")
+    else:
+        ok.append(f"ASP.NET Core 2.x on .NET Framework: {latest} built from {commit[:12]} - matches manifest")
+except Exception as e:
+    drift.append(f"could not check ASP.NET Core 2.3 on NuGet: {e}")
 
 # 3. preview feature list
 try:
@@ -97,11 +118,11 @@ for v in m["versions"]["in_scope"]:
 for c in m["checkouts"]:
     prov = os.path.join(root, "src", c["dest"] + ".provenance")
     if not os.path.exists(prov):
-        drift.append(f"checkout {c['dest']} missing - run scripts/02-fetch-source.sh")
-    elif f"tag={c['tag']}\n" not in open(prov).read():
-        drift.append(f"checkout {c['dest']} is not at {c['tag']} - run scripts/02-fetch-source.sh")
+        drift.append(f"checkout {c['dest']} missing - run scripts/02-fetch-source.sh {c['kind']}")
+    elif f"ref={c['ref']}\n" not in open(prov).read():
+        drift.append(f"checkout {c['dest']} is not at {c['ref']} - run scripts/02-fetch-source.sh {c['kind']}")
 if not any("LabEnvironment" in d or "Directory.Build" in d or "checkout" in d for d in drift):
-    ok.append("lab pins and checkouts agree with manifest")
+    ok.append(f"lab pins and all {len(m['checkouts'])} checkouts agree with manifest")
 
 for line in ok: print(f"  ok    {line}")
 for line in drift: print(f"  DRIFT {line}")

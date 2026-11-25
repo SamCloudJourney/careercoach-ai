@@ -1,64 +1,94 @@
 #!/usr/bin/env bash
-# Fetch the in-scope .NET source at exact release tags.
+# Fetch every in-scope source tree listed in scope/manifest.json ("checkouts").
 #
-# Layout produced (all under src/, which is gitignored):
-#   src/vmr/net10.0      dotnet/dotnet (VMR) @ v10.0.15  (+ v10.0.14 fetched for patch diffing)
-#   src/vmr/net11.0      dotnet/dotnet (VMR) @ v11.0.0   (+ v11.0.0-rc.3 fetched for patch diffing)
-#   src/sdk-band/net10.0 dotnet/sdk + dotnet/templating @ v10.0.404 (latest 10.0 SDK feature band)
+# kinds:  product    shipped source at the exact release ref (+ previous release for patch diffing)
+#         actions    live GitHub Actions: default branch, sparse + partial clone of .github only
+#         docs       documentation and samples as published (live branch)
+#         reference  release notes / CVE lists / preview-scope page
 #
-# Tags are read from scope/manifest.json so a single file controls what is "in scope".
-# Idempotent: re-running updates the existing clones to the manifest tags.
+# Every checkout gets local refs  lab/current  and  lab/previous  plus  <dest>.provenance.
+# Idempotent: re-running moves each checkout to the manifest ref.
+#
+# Usage: scripts/02-fetch-source.sh [kind]          JOBS=4 by default
 set -euo pipefail
 
 LAB_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MANIFEST="$LAB_ROOT/scope/manifest.json"
 SRC="$LAB_ROOT/src"
-mkdir -p "$SRC"
+LOGS="$SRC/.logs"
+JOBS="${JOBS:-4}"
+ONLY="${1:-}"
+mkdir -p "$SRC" "$LOGS"
+command -v git >/dev/null && command -v python3 >/dev/null || { echo "need git and python3" >&2; exit 1; }
 
-need() { command -v "$1" >/dev/null || { echo "missing tool: $1" >&2; exit 1; }; }
-need git; need python3
-
-# Emits: <dest> <repo-url> <tag> <previous-tag-or-dash>
-python3 -I - "$MANIFEST" <<'PY' > "$SRC/.fetch-plan"
+python3 -I - "$MANIFEST" "$ONLY" > "$SRC/.fetch-plan" <<'PY'
 import json, sys
-m = json.load(open(sys.argv[1]))
+m = json.load(open(sys.argv[1])); only = sys.argv[2]
 for c in m["checkouts"]:
-    print(c["dest"], c["repo"], c["tag"], c.get("previous_tag") or "-")
+    if only and c["kind"] != only:
+        continue
+    print("\t".join([c["dest"], c["repo"], c["ref"], c["ref_type"],
+                     c.get("previous_ref") or "-", ",".join(c.get("sparse") or []) or "-"]))
 PY
 
-clone_at_tag() {
-  local dest="$1" url="$2" tag="$3" prev="$4"
-  local dir="$SRC/$dest"
-  if [[ -d "$dir/.git" ]]; then
-    echo "==> [$dest] exists, syncing to $tag"
-    git -C "$dir" fetch --depth 1 --no-tags origin "refs/tags/$tag:refs/tags/$tag"
-    git -C "$dir" -c advice.detachedHead=false checkout -q "refs/tags/$tag"
-  else
-    echo "==> [$dest] cloning $url @ $tag"
-    mkdir -p "$(dirname "$dir")"
-    git -c advice.detachedHead=false clone --depth 1 --branch "$tag" --single-branch \
-        --no-tags "$url" "$dir"
-    git -C "$dir" tag -f "$tag" HEAD >/dev/null
-  fi
-  if [[ "$prev" != "-" ]]; then
-    echo "==> [$dest] fetching previous release $prev for patch diffing"
-    git -C "$dir" fetch --depth 1 --no-tags origin "refs/tags/$prev:refs/tags/$prev" || \
-      echo "warn: could not fetch $prev" >&2
-  fi
-  # Record provenance next to the checkout.
-  {
-    echo "repo=$url"
-    echo "tag=$tag"
-    echo "commit=$(git -C "$dir" rev-parse HEAD)"
-    echo "previous_tag=$prev"
-    echo "fetched_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-  } > "$dir.provenance"
+refspec() {
+  case "$2" in
+    tag)     echo "refs/tags/$1:refs/tags/$1" ;;
+    branch)  echo "refs/heads/$1:refs/remotes/origin/$1" ;;
+    commit)  echo "$1" ;;
+    default) echo "HEAD" ;;
+    *)       echo "unknown ref_type $2" >&2; return 1 ;;
+  esac
 }
 
-while read -r dest url tag prev; do
-  clone_at_tag "$dest" "$url" "$tag" "$prev"
+fetch_one() {
+  local dest="$1" url="$2" ref="$3" type="$4" prev="$5" sparse="$6"
+  local dir="$SRC/$dest" log="$LOGS/${dest//\//_}.log"
+  local filter=()
+  [[ "$sparse" != "-" ]] && filter=(--filter=blob:none)
+  {
+    echo "== $dest  $url  $type:$ref  $(date -u +%FT%TZ)"
+    if [[ ! -d "$dir/.git" ]]; then
+      mkdir -p "$dir"
+      git -C "$dir" init -q
+      git -C "$dir" remote add origin "$url"
+    else
+      git -C "$dir" remote set-url origin "$url"
+    fi
+    if [[ "$sparse" != "-" ]]; then
+      git -C "$dir" config remote.origin.promisor true
+      git -C "$dir" config remote.origin.partialclonefilter blob:none
+      git -C "$dir" sparse-checkout set --cone ${sparse//,/ }
+    fi
+    git -C "$dir" fetch --depth 1 --no-tags "${filter[@]}" origin "$(refspec "$ref" "$type")"
+    git -C "$dir" -c advice.detachedHead=false checkout -q --force FETCH_HEAD
+    git -C "$dir" update-ref refs/lab/current HEAD
+    if [[ "$prev" != "-" ]]; then
+      git -C "$dir" fetch --depth 1 --no-tags origin "$(refspec "$prev" "$type")"
+      git -C "$dir" update-ref refs/lab/previous FETCH_HEAD
+    fi
+    {
+      echo "repo=$url"
+      echo "ref=$ref"
+      echo "ref_type=$type"
+      echo "commit=$(git -C "$dir" rev-parse HEAD)"
+      echo "previous_ref=$prev"
+      [[ "$prev" != "-" ]] && echo "previous_commit=$(git -C "$dir" rev-parse refs/lab/previous)"
+      echo "sparse=$sparse"
+      echo "fetched_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    } > "$dir.provenance"
+  } > "$log" 2>&1 && printf 'ok    %-40s %s\n' "$dest" "$(cut -c1-12 <<<"$(git -C "$dir" rev-parse HEAD)")" \
+                   || printf 'FAIL  %-40s see %s\n' "$dest" "$log"
+}
+
+running=0
+while IFS=$'\t' read -r dest url ref type prev sparse; do
+  fetch_one "$dest" "$url" "$ref" "$type" "$prev" "$sparse" &
+  if (( ++running >= JOBS )); then wait -n || true; running=$((running - 1)); fi
 done < "$SRC/.fetch-plan"
+wait
 
 echo
-echo "Done. Next: scripts/03-link-components.sh"
-du -sh "$SRC"/*/* 2>/dev/null || true
+grep -c . "$SRC/.fetch-plan" | xargs printf '%s checkouts in plan; '
+grep -L '^commit=' $(sed 's|\t.*||; s|^|'"$SRC"'/|; s|$|.provenance|' "$SRC/.fetch-plan") 2>/dev/null | wc -l | xargs printf '%s missing provenance\n'
+echo "Next: scripts/03-link-components.sh"

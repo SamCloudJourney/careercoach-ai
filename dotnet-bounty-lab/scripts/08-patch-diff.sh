@@ -25,17 +25,22 @@ def git(repo, *args):
 
 summary_rows = []
 for c in m["checkouts"]:
-    prev, tag = c.get("previous_tag"), c["tag"]
+    if c["kind"] != "product":
+        continue
+    prev, tag = c.get("previous_ref"), c["ref"]
+    if c["ref_type"] == "commit":  # e.g. ASP.NET Core 2.3: diff the fetched commits via local refs
+        prev, tag = ("refs/lab/previous" if prev else None), "refs/lab/current"
     repo = os.path.join(root, "src", c["dest"])
     if not prev or not os.path.isdir(os.path.join(repo, ".git")):
         continue
     is_vmr = c["dest"].startswith("vmr/")
-    name = f"{c['dest'].replace('/', '_')}__{prev}..{tag}"
+    label_prev, label_tag = (c.get("previous_ref", "")[:12], c["ref"][:12]) if c["ref_type"] == "commit" else (prev, tag)
+    name = f"{c['dest'].replace('/', '_')}__{label_prev}..{label_tag}"
     numstat = git(repo, "diff", "--numstat", "--no-renames", prev, tag)
     per_comp = collections.defaultdict(lambda: {"prod": 0, "test": 0, "add": 0, "del": 0, "files": []})
     for line in numstat.splitlines():
         a, d, path = line.split("\t", 2)
-        comp = path.split("/")[1] if is_vmr and path.startswith("src/") and path.count("/") > 1 else (c["dest"].split("/")[-1] if not is_vmr else "(vmr root)")
+        comp = path.split("/")[1] if is_vmr and path.startswith("src/") and path.count("/") > 1 else (c.get("component", c["dest"].split("/")[-1]) if not is_vmr else "(vmr root)")
         a = int(a) if a.isdigit() else 0; d = int(d) if d.isdigit() else 0
         bucket = per_comp[comp]
         if TEST.search(path):
@@ -64,7 +69,7 @@ for c in m["checkouts"]:
             signals[current] += 1
             if len(examples[current]) < 3: examples[current].append(line[1:].strip()[:140])
 
-    out = [f"# Patch diff: `{c['dest']}` {prev} → {tag}", "",
+    out = [f"# Patch diff: `{c['dest']}` {label_prev} → {label_tag}", "",
            f"Upstream `{c['repo']}`. Product files only (tests, eng, docs, version bumps excluded). "
            f"Full diff: `notes/patch-diffs/raw/{name}.diff` (regenerate with `scripts/08-patch-diff.sh`).", "",
            "| Component | Tier | Product files | +/- lines | Test files |", "|---|---|---|---|---|"]
@@ -83,12 +88,12 @@ for c in m["checkouts"]:
             out.append(f"  - `{ex.replace('`', '')}`")
     open(os.path.join(OUT, name + ".md"), "w").write("\n".join(out) + "\n")
     tp = sum(b["prod"] for b in per_comp.values())
-    summary_rows.append((c["dest"], prev, tag, tp, len(signals)))
+    summary_rows.append((c["dest"], label_prev, label_tag, tp, len(signals), name))
     print(f"wrote notes/patch-diffs/{name}.md  ({tp} product files, {len(signals)} files with security signal)")
 
 idx = ["# Patch diffs", "", "| Checkout | From | To | Product files changed | Files with security signal | Report |", "|---|---|---|---|---|---|"]
-for dest, prev, tag, tp, ns in summary_rows:
-    n = f"{dest.replace('/', '_')}__{prev}..{tag}.md"
+for dest, prev, tag, tp, ns, name in summary_rows:
+    n = name + ".md"
     idx.append(f"| `{dest}` | `{prev}` | `{tag}` | {tp} | {ns} | [{n}]({n}) |")
 open(os.path.join(OUT, "README.md"), "w").write("\n".join(idx) + "\n")
 PY

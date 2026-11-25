@@ -8,7 +8,10 @@ exec python3 -I - "$LAB_ROOT" <<'PY'
 import csv, json, os, subprocess, sys
 root = sys.argv[1]
 m = json.load(open(os.path.join(root, "scope", "manifest.json")))
-vmrs = [(c["dest"].split("/")[1], os.path.join(root, "src", c["dest"], "src"), c["tag"]) for c in m["checkouts"] if c["dest"].startswith("vmr/")]
+# Full-product releases (runtime + ASP.NET Core present); feature-band VMRs only carry the SDK toolchain.
+vmrs = [(c["dest"].split("/", 1)[1], os.path.join(root, "src", c["dest"], "src"), c["ref"]) for c in m["checkouts"]
+        if c["kind"] == "product" and c["dest"].startswith("vmr/") and "-sdk" not in c["dest"]]
+ASP23 = os.path.join(root, "src", "aspnetcore-2.3")  # ASP.NET Core 2.3 on .NET Framework, own repo layout
 rows = list(csv.DictReader(open(os.path.join(root, "scope", "hotspots.tsv")), delimiter="\t"))
 
 def stats(path):
@@ -34,8 +37,8 @@ out = ["# In-scope attack surface", "",
        "Sizes count product source only (tests excluded). **Δ files** = product files that differ between " +
        " and ".join(f"`{t}`" for _, _, t in vmrs) + ": a large Δ means new code that has had little outside review.", "",
        "Known public CVEs are listed to point at bug *classes*. A re-report of a known issue is out of scope; a variant that bypasses its fix is not.", "",
-       "| Area | Path (under `src/vmr/<ver>/src/`) | " + " | ".join(f"{v} files/LOC" for v, _, _ in vmrs) + " | Δ files | Bug classes | Lab coverage | Public history |",
-       "|---|---|" + "---|" * len(vmrs) + "---|---|---|---|"]
+       "| Area | Path (under `src/vmr/<ver>/src/`) | " + " | ".join(f"{v} files/LOC" for v, _, _ in vmrs) + " | 2.3 (netfx) | Δ files | Bug classes | Lab coverage | Public history |",
+       "|---|---|" + "---|" * len(vmrs) + "---|---|---|---|---|"]
 missing = []
 for r in rows:
     cells = []
@@ -49,6 +52,14 @@ for r in rows:
         else:
             cells.append("— absent")
             missing.append(f"{v}: {r['path']}")
+    if r["path"].startswith("aspnetcore/"):
+        p23 = os.path.join(ASP23, r["path"].split("/", 1)[1])
+        if os.path.exists(p23):
+            f, loc = stats(p23); cells.append(f"{f} / {loc:,}")
+        else:
+            cells.append("— (2.x layout differs)")
+    else:
+        cells.append("n/a")
     delta = changed(paths[0], paths[-1]) if len(paths) > 1 else "n/a"
     cov = r["lab_coverage"]
     cov = f"⚪ {cov}" if cov.startswith(("none", "Windows")) else f"🟢 {cov}"
