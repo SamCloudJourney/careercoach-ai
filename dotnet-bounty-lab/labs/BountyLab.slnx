@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Lab.Common/Lab.Common.csproj" />
+    <Project Path="src/Lab.Target/Lab.Target.csproj" />
+    <Project Path="src/Lab.Probes/Lab.Probes.csproj" />
+    <Project Path="src/Lab.Fuzz/Lab.Fuzz.csproj" />
+  </Folder>
+</Solution>

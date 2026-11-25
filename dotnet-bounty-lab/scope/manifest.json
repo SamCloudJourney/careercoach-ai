@@ -1,0 +1,145 @@
+{
+  "$comment": "Single source of truth for what this lab treats as in scope. Re-verify with scripts/00-check-scope.sh before submitting anything.",
+  "verified_utc": "2026-11-25",
+  "program": {
+    "name": "Microsoft .NET Bounty Program",
+    "url": "https://www.microsoft.com/en-us/msrc/bounty-dot-net-core",
+    "page_last_updated": "2026-10-20",
+    "preview_scope_url": "https://github.com/dotnet/core/blob/main/bug-bounty-preview-scopes.md",
+    "preview_scope_last_updated": "2021-11-15",
+    "support_policy_url": "https://dotnet.microsoft.com/platform/support/policy/dotnet-core",
+    "release_index_url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json",
+    "submit_url": "https://aka.ms/secure-at",
+    "award_range_usd": "500-40000",
+    "eligible_severities": [
+      "Critical",
+      "Important"
+    ]
+  },
+  "versions": {
+    "in_scope": [
+      {
+        "channel": "11.0",
+        "release_type": "sts",
+        "runtime": "11.0.0",
+        "sdk": "11.0.100",
+        "released": "2026-11-10",
+        "eol": "2028-11-14"
+      },
+      {
+        "channel": "10.0",
+        "release_type": "lts",
+        "runtime": "10.0.15",
+        "sdk": "10.0.404",
+        "released": "2026-11-10",
+        "eol": "2028-11-14"
+      }
+    ],
+    "upcoming_rc": null,
+    "out_of_scope": [
+      {
+        "channel": "9.0",
+        "reason": "End of support 2026-11-10"
+      },
+      {
+        "channel": "8.0",
+        "reason": "End of support 2026-11-10"
+      },
+      {
+        "channel": "7.0 and older",
+        "reason": "End of support"
+      },
+      {
+        "channel": ".NET Framework (all)",
+        "reason": "Explicitly excluded by the program"
+      },
+      {
+        "channel": "12.0 previews / nightly / main branch",
+        "reason": "Daily builds and early betas are excluded; no 12.0 RC exists yet"
+      }
+    ]
+  },
+  "checkouts": [
+    {
+      "dest": "vmr/net10.0",
+      "repo": "https://github.com/dotnet/dotnet.git",
+      "tag": "v10.0.15",
+      "previous_tag": "v10.0.14",
+      "note": "Full .NET 10.0.15 product source (runtime, ASP.NET Core, SDK 10.0.1xx, desktop, templates)"
+    },
+    {
+      "dest": "vmr/net11.0",
+      "repo": "https://github.com/dotnet/dotnet.git",
+      "tag": "v11.0.0",
+      "previous_tag": "v11.0.0-rc.3.26522.148",
+      "note": "Full .NET 11.0.0 / SDK 11.0.100 product source"
+    },
+    {
+      "dest": "sdk-band/net10.0/sdk",
+      "repo": "https://github.com/dotnet/sdk.git",
+      "tag": "v10.0.404",
+      "previous_tag": "v10.0.403",
+      "note": "Latest supported 10.0 SDK feature band (CLI, template feed)"
+    },
+    {
+      "dest": "sdk-band/net10.0/templating",
+      "repo": "https://github.com/dotnet/templating.git",
+      "tag": "v10.0.404",
+      "previous_tag": "v10.0.403",
+      "note": "Template engine for the 10.0.4xx SDK band"
+    }
+  ],
+  "component_tiers": {
+    "$comment": "VMR src/ directories by how directly they map to the bounty's wording. Tier names are this lab's, not MSRC's. Verified against src/vmr/*/src/source-manifest.json.",
+    "tier1_core": {
+      "meaning": "The product the program names: the .NET runtime + base class libraries, and ASP.NET Core.",
+      "components": [
+        "runtime",
+        "aspnetcore"
+      ]
+    },
+    "tier2_shipped_product": {
+      "meaning": "Ships in the .NET installers, or is named by the program (templates, GitHub Actions). In scope; show the impact is in .NET itself.",
+      "components": [
+        "sdk",
+        "templating",
+        "windowsdesktop",
+        "winforms",
+        "wpf"
+      ]
+    },
+    "tier3_toolchain": {
+      "meaning": "Toolchain or separate products bundled with, or built alongside, the SDK. The program does not name them; confirm with MSRC before investing heavily.",
+      "components": [
+        "roslyn",
+        "msbuild",
+        "nuget-client",
+        "razor",
+        "fsharp",
+        "emsdk",
+        "efcore",
+        "diagnostics",
+        "deployment-tools",
+        "command-line-api",
+        "vstest",
+        "sourcelink",
+        "symreader",
+        "xdt",
+        "cecil"
+      ]
+    },
+    "out_of_scope_in_tree": {
+      "meaning": "Build infrastructure and vendored third-party code. Excluded as 'platform technologies not unique to .NET' or third-party issues without a .NET-specific impact.",
+      "components": [
+        "arcade",
+        "scenario-tests",
+        "source-build-assets"
+      ],
+      "paths": [
+        "src/runtime/src/native/external",
+        "src/aspnetcore/src/submodules",
+        "src/source-build-assets"
+      ]
+    }
+  }
+}

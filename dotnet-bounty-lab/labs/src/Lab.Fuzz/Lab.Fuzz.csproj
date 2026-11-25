@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Lab.Fuzz</RootNamespace>
+    <AssemblyName>labfuzz</AssemblyName>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <TieredPGO>true</TieredPGO>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- ASP.NET Core parsers (FormReader, MultipartReader, Microsoft.Net.Http.Headers) are in scope too. -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="SharpFuzz" Version="2.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lab.Common\Lab.Common.csproj" />
+  </ItemGroup>
+</Project>

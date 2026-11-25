@@ -1,0 +1,27 @@
+<Project>
+  <!--
+    Every lab builds for BOTH in-scope runtimes so a finding can be shown on each.
+    Pick one at run time:  dotnet run -f net10.0   |   dotnet run -f net11.0
+  -->
+  <PropertyGroup>
+    <TargetFrameworks>net10.0;net11.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Bind to the newest installed PATCH of the targeted major only (10.0.x / 11.0.x), never a newer major. -->
+    <RollForward>LatestPatch</RollForward>
+    <Deterministic>true</Deterministic>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>$(NoWarn);CA1416;CS1591;SYSLIB0050;SYSLIB0051</NoWarn>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <!-- ASP.NET Core packages outside the shared framework must match the runtime band exactly. -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <AspNetCorePackageVersion>10.0.15</AspNetCorePackageVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net11.0'">
+    <AspNetCorePackageVersion>11.0.0</AspNetCorePackageVersion>
+  </PropertyGroup>
+</Project>

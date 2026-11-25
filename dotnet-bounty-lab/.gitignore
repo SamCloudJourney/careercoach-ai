@@ -1,0 +1,14 @@
+/src/
+/.dotnet/
+**/bin/
+**/obj/
+notes/logs/
+labs/**/artifacts/
+labs/**/findings/
+*.provenance
+notes/patch-diffs/raw/
+/tools/vendor/
+/tools/bin/
+labs/fuzz-corpus/
+# Unreported research output - never commit or publish before MSRC triage (CVD)
+notes/private/
