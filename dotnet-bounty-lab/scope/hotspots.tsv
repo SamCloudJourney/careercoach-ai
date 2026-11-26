@@ -1,0 +1,72 @@
+area	path	classes	lab_coverage	known_public_history
+Kestrel HTTP/1.1 parser	aspnetcore/src/Servers/Kestrel/Core/src/Internal/Http	request smuggling, header/target parsing, chunked framing, limits	labctl http1 (46 probes)	CVE-2025-55315 (chunk-extension smuggling)
+Kestrel HTTP/2	aspnetcore/src/Servers/Kestrel/Core/src/Internal/Http2	stream lifecycle, flow control, header validation, floods	labctl http2 (36 probes)	CVE-2023-44487 (Rapid Reset)
+Kestrel HTTP/3	aspnetcore/src/Servers/Kestrel/Core/src/Internal/Http3	stream/connection lifetime (use-after-free class), QPACK	none yet (needs QUIC + TLS listener)	CVE-2024-35264, CVE-2024-38229 (HTTP/3 RCE)
+HPACK / QPACK (shared)	aspnetcore/src/Shared/runtime/Http2/Hpack	decoder state, dynamic table, integer overflow	labctl http2 hpack-* probes
+QPACK (shared)	aspnetcore/src/Shared/runtime/Http3/QPack	decoder state, static/dynamic table	none yet
+QUIC transport	aspnetcore/src/Servers/Kestrel/Transport.Quic	connection/stream lifetime over msquic	none yet
+HTTP.sys server (Windows)	aspnetcore/src/Servers/HttpSys	native interop, request queue, auth	Windows only
+IIS module ANCM (Windows, native C++)	aspnetcore/src/Servers/IIS/AspNetCoreModuleV2	native memory safety, config parsing	Windows only
+SignalR hubs	aspnetcore/src/SignalR/server/Core	hub method authZ, invocation binding, message limits	labctl signalr (9 probes)
+SignalR MessagePack protocol	aspnetcore/src/SignalR/common/Protocols.MessagePack	binary deserialization	none yet
+Blazor Server circuits	aspnetcore/src/Components/Server	circuit state, JS interop, render batch acks, event dispatch authZ	template audit (blazor)
+Blazor SSR / forms	aspnetcore/src/Components/Endpoints	form mapping, antiforgery, enhanced navigation	template audit (blazor)
+Blazor WebAssembly	aspnetcore/src/Components/WebAssembly	boot resources, auth state	template audit (blazorwasm)
+ASP.NET Core Identity	aspnetcore/src/Identity	lockout, 2FA, token providers, passkeys, API endpoints	template audit (webapp --auth Individual)
+JWT bearer	aspnetcore/src/Security/Authentication/JwtBearer	token validation configuration, event handling	labctl auth jwt.* (16 probes)
+Cookie authentication	aspnetcore/src/Security/Authentication/Cookies	ticket protection, sliding expiry, chunking	labctl auth path/cookie probes
+OpenID Connect	aspnetcore/src/Security/Authentication/OpenIdConnect	state/nonce, correlation, response mode	none yet
+Negotiate / Kerberos	aspnetcore/src/Security/Authentication/Negotiate	connection-level auth persistence	none yet
+Authorization	aspnetcore/src/Security/Authorization	policy evaluation, endpoint metadata	labctl auth path.* (66 probes)
+Antiforgery	aspnetcore/src/Antiforgery	token binding, content-type gating	labctl auth csrf.* (7 probes)
+Data Protection	aspnetcore/src/DataProtection	key ring, payload format, key escrow	none yet
+Static files	aspnetcore/src/Middleware/StaticFiles	path traversal, range, content-type	labctl auth static.* (13 probes)
+CORS	aspnetcore/src/Middleware/CORS	origin matching, preflight	none yet
+Forwarded headers	aspnetcore/src/Middleware/HttpOverrides	proxy trust, scheme/host spoofing	none yet
+URL rewrite	aspnetcore/src/Middleware/Rewrite	regex rules, open redirect	none yet
+Rate limiting	aspnetcore/src/Middleware/RateLimiting	partition keys, bypass	none yet
+Output caching	aspnetcore/src/Middleware/OutputCaching	cache key confusion, auth leakage	none yet
+WebSockets middleware	aspnetcore/src/Middleware/WebSockets	handshake, origin	labctl signalr (ws)
+Response compression	aspnetcore/src/Middleware/ResponseCompression	BREACH-class, buffering	none yet
+Request decompression	aspnetcore/src/Middleware/RequestDecompression	decompression bombs, limits	none yet
+Routing	aspnetcore/src/Http/Routing	route matching, constraints, path normalisation	labctl auth path.*
+Form / multipart / query parsing	aspnetcore/src/Http/WebUtilities	limits, encoding, boundary handling	labfuzz aspnet-form, aspnet-multipart, query-string
+Header value parsers	aspnetcore/src/Http/Headers	Set-Cookie, Content-Disposition, media types	labfuzz aspnet-headers
+MVC model binding	aspnetcore/src/Mvc/Mvc.Core/src/ModelBinding	over-posting, type confusion, limits	none yet
+Project templates (explicitly in scope)	aspnetcore/src/ProjectTemplates	insecure defaults, sample code	scripts/09-template-audit.sh
+GitHub Actions (explicitly in scope)	aspnetcore/.github/workflows	workflow injection, pwn-request, token scope	scripts/09-template-audit.sh (live workflow lint)
+HttpClient / SocketsHttpHandler	runtime/src/libraries/System.Net.Http/src/System/Net/Http/SocketsHttpHandler	response parsing, redirects, decompression, connection reuse	labfuzz net-http-headers
+TLS (SslStream)	runtime/src/libraries/System.Net.Security/src	certificate validation, renegotiation, SNI	none yet
+QUIC (System.Net.Quic)	runtime/src/libraries/System.Net.Quic/src	msquic interop, stream lifetime	none yet
+Cryptography (managed)	runtime/src/libraries/System.Security.Cryptography/src	X509 chain building, PEM/PKCS parsing, key import	none yet	CVE-2024-0057 (X509 chain SFB)
+Cryptography native shim	runtime/src/native/libs/System.Security.Cryptography.Native	OpenSSL interop (shim bugs only; OpenSSL itself out of scope)	none yet
+CMS / PKCS#7 / PKCS#12	runtime/src/libraries/System.Security.Cryptography.Pkcs	ASN.1 structures, signer validation	labfuzz asn1-der (decoder)
+XML signatures	runtime/src/libraries/System.Security.Cryptography.Xml	signature wrapping, transforms, references	none yet
+COSE	runtime/src/libraries/System.Security.Cryptography.Cose	CBOR headers, signature validation	none yet
+System.Text.Json	runtime/src/libraries/System.Text.Json/src	DoS, polymorphism, reference handling, depth	labfuzz json-document, json-serializer, utf8-json-reader	CVE-2024-30105 (DoS)
+System.Xml	runtime/src/libraries/System.Private.Xml/src	XXE (defaults), XSLT, schema validation DoS	labfuzz xml-reader
+System.Uri	runtime/src/libraries/System.Private.Uri/src	canonicalisation, IDN, file URIs, host parsing	labfuzz uri	CVE-2023-36049 (FTP URI injection)
+Regular expressions	runtime/src/libraries/System.Text.RegularExpressions/src	ReDoS, engine differentials, source generator	labfuzz regex
+ASN.1	runtime/src/libraries/System.Formats.Asn1/src	BER/DER decoding	labfuzz asn1-der
+CBOR	runtime/src/libraries/System.Formats.Cbor	decoding, canonical forms	none yet
+TAR	runtime/src/libraries/System.Formats.Tar/src	path traversal, links, header parsing	labfuzz tar
+ZIP / compression	runtime/src/libraries/System.IO.Compression/src	zip-slip, bombs, zlib-ng/brotli interop	labfuzz zip, decompress
+OPC packages	runtime/src/libraries/System.IO.Packaging	part URIs, relationships, DoS	none yet
+Web encoders (XSS)	runtime/src/libraries/System.Text.Encodings.Web/src	encoder bypass	labfuzz web-encoders
+Mail	runtime/src/libraries/System.Net.Mail	header injection, address parsing	none yet
+WebSockets (client/protocol)	runtime/src/libraries/System.Net.WebSockets/src	framing, compression (permessage-deflate)	none yet
+DataContract serialization	runtime/src/libraries/System.Private.DataContractSerialization	type resolution, known types, DoS	labfuzz datacontract
+BinaryFormatter (removed)	runtime/src/libraries/System.Runtime.Serialization.Formatters	verify it stays throwing PlatformNotSupported	none yet
+HttpUtility	runtime/src/libraries/System.Web.HttpUtility	encode/decode differentials	none yet
+Host (muxer, apphost, hostfxr)	runtime/src/native/corehost	DLL/so search order, config probing, EoP	none yet
+CoreCLR VM	runtime/src/coreclr/vm	type loader, verifier, JIT interface, unsafe accessors	none yet
+Metadata reader (native)	runtime/src/coreclr/md	malformed PE/metadata	none yet
+Diagnostics / debugger transport	runtime/src/coreclr/debug	diagnostic IPC, dump creation	none yet
+Mono runtime	runtime/src/mono/mono	interpreter, AOT, WASM runtime	none yet
+GitHub Actions (runtime)	runtime/.github/workflows	workflow injection, token scope	scripts/09-template-audit.sh (live workflow lint)
+dotnet CLI	sdk/src/Cli	tool install, workload, restore, path handling	none yet
+SDK template feed (explicitly in scope)	sdk/template_feed	insecure template defaults	scripts/09-template-audit.sh
+SDK resolvers	sdk/src/Resolvers	SDK resolution, global.json, path hijack	none yet
+Template engine	templating/src	template execution, symbol evaluation, path writes	scripts/09-template-audit.sh
+WinForms (Windows)	winforms/src	clipboard/drag-drop deserialization, resources	Windows only
+WPF (Windows)	wpf/src	XAML/BAML parsing, XPS, clipboard	Windows only

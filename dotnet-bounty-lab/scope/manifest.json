@@ -1,0 +1,617 @@
+{
+  "$comment": "Single source of truth for what this lab treats as in scope. Re-verify with scripts/00-check-scope.sh before submitting anything.",
+  "verified_utc": "2026-11-25",
+  "program": {
+    "name": "Microsoft .NET Bounty Program",
+    "url": "https://www.microsoft.com/en-us/msrc/bounty-dot-net-core",
+    "page_last_updated": "2026-10-20",
+    "preview_scope_url": "https://github.com/dotnet/core/blob/main/bug-bounty-preview-scopes.md",
+    "preview_scope_last_updated": "2021-11-15",
+    "support_policy_url": "https://dotnet.microsoft.com/platform/support/policy/dotnet-core",
+    "release_index_url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json",
+    "submit_url": "https://aka.ms/secure-at",
+    "award_range_usd": "500-40000",
+    "eligible_severities": [
+      "Critical",
+      "Important"
+    ],
+    "scope_basis": {
+      "current": "Current, supported versions of Microsoft .NET and ASP.NET Core.",
+      "aspnet2": "The latest version of ASP.NET Core 2.X, if running on .NET Framework.",
+      "templates": ".NET and ASP.NET-Core templates provided with the current, supported versions of .NET and ASP.NET.",
+      "actions": "Any associated GitHub Actions in the associated .NET or ASP.NET Core GitHub repositories.",
+      "docs": "Documentation on docs.microsoft.com or learn.microsoft.com/dotnet/, and samples in that documentation, for current supported versions.",
+      "preview": "Any Preview Features listed in the dotnet/core bug-bounty-preview-scopes page."
+    }
+  },
+  "versions": {
+    "in_scope": [
+      {
+        "channel": "11.0",
+        "release_type": "sts",
+        "runtime": "11.0.0",
+        "sdk": "11.0.100",
+        "released": "2026-11-10",
+        "eol": "2028-11-14",
+        "sdks": [
+          "11.0.100"
+        ]
+      },
+      {
+        "channel": "10.0",
+        "release_type": "lts",
+        "runtime": "10.0.15",
+        "sdk": "10.0.404",
+        "released": "2026-11-10",
+        "eol": "2028-11-14",
+        "sdks": [
+          "10.0.404",
+          "10.0.115"
+        ]
+      }
+    ],
+    "upcoming_rc": null,
+    "out_of_scope": [
+      {
+        "channel": "9.0",
+        "reason": "End of support 2026-11-10"
+      },
+      {
+        "channel": "8.0",
+        "reason": "End of support 2026-11-10"
+      },
+      {
+        "channel": "7.0 and older",
+        "reason": "End of support"
+      },
+      {
+        "channel": ".NET Framework (all)",
+        "reason": "Explicitly excluded by the program"
+      },
+      {
+        "channel": "12.0 previews / nightly / main branch",
+        "reason": "Daily builds and early betas are excluded; no 12.0 RC exists yet"
+      }
+    ],
+    "aspnetcore_on_netfx": {
+      "product": "ASP.NET Core 2.3 on .NET Framework",
+      "latest": "2.3.14",
+      "previous": "2.3.13",
+      "commit": "094d253c4d4a94ef6bc60869a45f0cccccde8cf3",
+      "previous_commit": "1db07eda0330bfc87e383d1d65a50e9f0d43c6e9",
+      "branch": "release/2.3 (built from internal/release/2.3)",
+      "nuget_probe": "microsoft.aspnetcore.server.kestrel.core",
+      "dependency_note": "2.3.x packages depend on Microsoft.Extensions.* 8.0.x (dotnet/runtime release/8.0). .NET 8 is out of support; whether those dependencies are covered when consumed by ASP.NET Core 2.3 is unclear - ask MSRC. Not downloaded."
+    }
+  },
+  "checkouts": [
+    {
+      "dest": "vmr/net10.0",
+      "kind": "product",
+      "repo": "https://github.com/dotnet/dotnet.git",
+      "ref": "v10.0.15",
+      "ref_type": "tag",
+      "basis": "current",
+      "note": ".NET 10.0.15 runtime + ASP.NET Core + Windows Desktop + SDK 10.0.115 (1xx band; v10.0.115 is the same commit)",
+      "previous_ref": "v10.0.14"
+    },
+    {
+      "dest": "vmr/net10.0-sdk4xx",
+      "kind": "product",
+      "repo": "https://github.com/dotnet/dotnet.git",
+      "ref": "v10.0.404",
+      "ref_type": "tag",
+      "basis": "current",
+      "note": "SDK 10.0.404 (4xx band): sdk, templating, roslyn, msbuild, nuget-client, razor, fsharp, vstest, sourcelink",
+      "previous_ref": "v10.0.403"
+    },
+    {
+      "dest": "vmr/net11.0",
+      "kind": "product",
+      "repo": "https://github.com/dotnet/dotnet.git",
+      "ref": "v11.0.0",
+      "ref_type": "tag",
+      "basis": "current",
+      "note": ".NET 11.0.0 runtime + ASP.NET Core + Windows Desktop + SDK 11.0.100",
+      "previous_ref": "v11.0.0-rc.3.26522.148"
+    },
+    {
+      "dest": "aspnetcore-2.3",
+      "kind": "product",
+      "repo": "https://github.com/dotnet/aspnetcore.git",
+      "ref": "094d253c4d4a94ef6bc60869a45f0cccccde8cf3",
+      "ref_type": "commit",
+      "basis": "aspnet2",
+      "note": "ASP.NET Core 2.3.14 (NuGet nuspec commit); 2.3.13 fetched for diffing",
+      "previous_ref": "1db07eda0330bfc87e383d1d65a50e9f0d43c6e9",
+      "tier": "tier1_core",
+      "component": "aspnetcore"
+    },
+    {
+      "dest": "github-actions/dotnet",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/dotnet.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "The VMR's own workflows",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier1_core",
+      "component": "dotnet-vmr"
+    },
+    {
+      "dest": "github-actions/aspnetcore",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/aspnetcore.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'aspnetcore'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier1_core",
+      "component": "aspnetcore"
+    },
+    {
+      "dest": "github-actions/cecil",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/cecil.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'cecil'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "cecil"
+    },
+    {
+      "dest": "github-actions/command-line-api",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/command-line-api.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'command-line-api'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "command-line-api"
+    },
+    {
+      "dest": "github-actions/deployment-tools",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/deployment-tools.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'deployment-tools'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "deployment-tools"
+    },
+    {
+      "dest": "github-actions/diagnostics",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/diagnostics.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'diagnostics'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "diagnostics"
+    },
+    {
+      "dest": "github-actions/efcore",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/efcore.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'efcore'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "efcore"
+    },
+    {
+      "dest": "github-actions/emsdk",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/emsdk.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'emsdk'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "emsdk"
+    },
+    {
+      "dest": "github-actions/fsharp",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/fsharp.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'fsharp'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "fsharp"
+    },
+    {
+      "dest": "github-actions/msbuild",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/msbuild.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'msbuild'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "msbuild"
+    },
+    {
+      "dest": "github-actions/NuGet.Client",
+      "kind": "actions",
+      "repo": "https://github.com/NuGet/NuGet.Client.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'nuget-client'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "nuget-client"
+    },
+    {
+      "dest": "github-actions/razor",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/razor.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'razor'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "razor"
+    },
+    {
+      "dest": "github-actions/roslyn",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/roslyn.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'roslyn'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "roslyn"
+    },
+    {
+      "dest": "github-actions/runtime",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/runtime.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'runtime'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier1_core",
+      "component": "runtime"
+    },
+    {
+      "dest": "github-actions/sdk",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/sdk.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'sdk'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier2_shipped_product",
+      "component": "sdk"
+    },
+    {
+      "dest": "github-actions/sourcelink",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/sourcelink.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'sourcelink'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "sourcelink"
+    },
+    {
+      "dest": "github-actions/symreader",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/symreader.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'symreader'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "symreader"
+    },
+    {
+      "dest": "github-actions/templating",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/templating.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'templating'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier2_shipped_product",
+      "component": "templating"
+    },
+    {
+      "dest": "github-actions/vstest",
+      "kind": "actions",
+      "repo": "https://github.com/microsoft/vstest.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'vstest' (VMR lists an internal Azure DevOps mirror; public upstream used)",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "vstest"
+    },
+    {
+      "dest": "github-actions/windowsdesktop",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/windowsdesktop.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'windowsdesktop'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier2_shipped_product",
+      "component": "windowsdesktop"
+    },
+    {
+      "dest": "github-actions/winforms",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/winforms.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'winforms'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier2_shipped_product",
+      "component": "winforms"
+    },
+    {
+      "dest": "github-actions/wpf",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/wpf.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'wpf'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier2_shipped_product",
+      "component": "wpf"
+    },
+    {
+      "dest": "github-actions/xdt",
+      "kind": "actions",
+      "repo": "https://github.com/dotnet/xdt.git",
+      "ref": "HEAD",
+      "ref_type": "default",
+      "basis": "actions",
+      "note": "live workflows for VMR component 'xdt'",
+      "sparse": [
+        ".github"
+      ],
+      "tier": "tier3_toolchain",
+      "component": "xdt"
+    },
+    {
+      "dest": "docs/dotnet-docs",
+      "kind": "docs",
+      "repo": "https://github.com/dotnet/docs.git",
+      "ref": "live",
+      "ref_type": "branch",
+      "basis": "docs",
+      "note": "published content of learn.microsoft.com/dotnet",
+      "tier": "tier2_shipped_product"
+    },
+    {
+      "dest": "docs/dotnet-api-docs",
+      "kind": "docs",
+      "repo": "https://github.com/dotnet/dotnet-api-docs.git",
+      "ref": "live",
+      "ref_type": "branch",
+      "basis": "docs",
+      "note": "published content of learn.microsoft.com/dotnet/api (API reference)",
+      "tier": "tier2_shipped_product"
+    },
+    {
+      "dest": "docs/docs-desktop",
+      "kind": "docs",
+      "repo": "https://github.com/dotnet/docs-desktop.git",
+      "ref": "live",
+      "ref_type": "branch",
+      "basis": "docs",
+      "note": "published content of learn.microsoft.com/dotnet/desktop (WinForms/WPF)",
+      "tier": "tier2_shipped_product"
+    },
+    {
+      "dest": "docs/aspnetcore-docs",
+      "kind": "docs",
+      "repo": "https://github.com/dotnet/AspNetCore.Docs.git",
+      "ref": "live",
+      "ref_type": "branch",
+      "basis": "docs",
+      "note": "published content of learn.microsoft.com/aspnet/core",
+      "tier": "tier2_shipped_product"
+    },
+    {
+      "dest": "docs/samples",
+      "kind": "docs",
+      "repo": "https://github.com/dotnet/samples.git",
+      "ref": "live",
+      "ref_type": "branch",
+      "basis": "docs",
+      "note": "published content of code samples referenced by learn.microsoft.com/dotnet",
+      "tier": "tier2_shipped_product"
+    },
+    {
+      "dest": "docs/aspnetcore-docs-samples",
+      "kind": "docs",
+      "repo": "https://github.com/dotnet/AspNetCore.Docs.Samples.git",
+      "ref": "main",
+      "ref_type": "branch",
+      "basis": "docs",
+      "note": "published content of samples referenced by the ASP.NET Core docs (no live branch)",
+      "tier": "tier2_shipped_product"
+    },
+    {
+      "dest": "reference/dotnet-core",
+      "kind": "reference",
+      "repo": "https://github.com/dotnet/core.git",
+      "ref": "main",
+      "ref_type": "branch",
+      "basis": "preview",
+      "note": "release notes, per-release CVE lists, bug-bounty-preview-scopes.md"
+    }
+  ],
+  "component_tiers": {
+    "$comment": "VMR src/ directories by how directly they map to the bounty's wording. Tier names are this lab's, not MSRC's. Verified against src/vmr/*/src/source-manifest.json.",
+    "tier1_core": {
+      "meaning": "The product the program names: the .NET runtime + base class libraries, and ASP.NET Core.",
+      "components": [
+        "runtime",
+        "aspnetcore"
+      ]
+    },
+    "tier2_shipped_product": {
+      "meaning": "Ships in the .NET installers, or is named by the program (templates, GitHub Actions). In scope; show the impact is in .NET itself.",
+      "components": [
+        "sdk",
+        "templating",
+        "windowsdesktop",
+        "winforms",
+        "wpf"
+      ]
+    },
+    "tier3_toolchain": {
+      "meaning": "Toolchain or separate products bundled with, or built alongside, the SDK. The program does not name them; confirm with MSRC before investing heavily.",
+      "components": [
+        "roslyn",
+        "msbuild",
+        "nuget-client",
+        "razor",
+        "fsharp",
+        "emsdk",
+        "efcore",
+        "diagnostics",
+        "deployment-tools",
+        "command-line-api",
+        "vstest",
+        "sourcelink",
+        "symreader",
+        "xdt",
+        "cecil"
+      ]
+    },
+    "out_of_scope_in_tree": {
+      "meaning": "Build infrastructure and vendored third-party code. Excluded as 'platform technologies not unique to .NET' or third-party issues without a .NET-specific impact.",
+      "components": [
+        "arcade",
+        "scenario-tests",
+        "source-build-assets"
+      ],
+      "paths": [
+        "src/runtime/src/native/external",
+        "src/aspnetcore/src/submodules",
+        "src/source-build-assets"
+      ]
+    }
+  },
+  "shipped_artifacts": {
+    "templates": {
+      "from": "installed SDKs (.dotnet/templates/<runtime>/*.nupkg)",
+      "dest": "shipped/templates",
+      "basis": "templates"
+    },
+    "binaries": {
+      "dest": "shipped/binaries",
+      "basis": "current",
+      "rids": [
+        "win-x64",
+        "linux-x64",
+        "osx-arm64"
+      ],
+      "products": [
+        "runtime",
+        "aspnetcore-runtime",
+        "windowsdesktop",
+        "aspnetcore-hosting-bundle"
+      ],
+      "note": "official release archives from release metadata, SHA-512 verified; SDK archives are installed under .dotnet"
+    },
+    "known_cves": {
+      "from": "release metadata cve-list for every release of each in-scope channel",
+      "dest": "scope/known-cves.json",
+      "why": "'Publicly-disclosed vulnerabilities ... already known' are out of scope"
+    }
+  },
+  "not_covered": [
+    {
+      "what": ".NET Aspire, .NET MAUI, dotnet/extensions (Microsoft.Extensions.AI etc.), Orleans, YARP, ML.NET, EF Core 2.x, Docker images",
+      "why": "Separate products with their own release cycles; not named by the .NET bounty page"
+    },
+    {
+      "what": "docs-aspire, docs-maui",
+      "why": "Documentation for products outside the program"
+    },
+    {
+      "what": "main / nightly branches of product repos",
+      "why": "Daily builds are excluded; only their GitHub Actions (which run from main) are in scope"
+    }
+  ]
+}
