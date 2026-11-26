@@ -1,12 +1,13 @@
 # Working rules for this repository
 
-## Subagents: no more than 2-3 at a time
+## Do the work yourself; subagents only when truly needed
 
-- Never run more than **3** subagents concurrently. Default to **2**; use a third only when the work is clearly independent.
+- When given a goal, work on it directly in the main session. That is the default for everything: reading code, running commands, writing files, checking results.
+- Use a subagent only when it is truly needed: independent work that would otherwise block the main thread, or a broad search whose raw output would flood the context. "It would be faster" is not enough.
+- When subagents are needed, use few. Never run more than **3** concurrently; prefer 1 or 2.
 - This covers every way of spawning agents: the Agent tool, forks, workflows, and remote sessions.
 - If a task wants more parallelism, queue the rest and start the next agent only when one finishes.
 - Workflow scripts must cap their fan-out at 3 concurrent agents, whatever the default size guideline says.
-- Prefer doing the work directly when it is a handful of tool calls.
 
 ## dotnet-bounty-lab
 
