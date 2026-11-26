@@ -1,0 +1,36 @@
+name: Windows runner test
+
+on:
+  push:
+    branches:
+      - "claude/**"
+    paths:
+      - ".github/workflows/windows-runner-test.yml"
+  workflow_dispatch:
+
+jobs:
+  windows-smoke-test:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Runner info
+        shell: pwsh
+        run: |
+          Write-Host "Runner OS: $env:RUNNER_OS"
+          Write-Host "Runner name: $env:RUNNER_NAME"
+          [System.Environment]::OSVersion
+          $PSVersionTable.PSVersion
+          Get-ChildItem | Select-Object Name
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Node and npm versions
+        shell: pwsh
+        run: |
+          node -v
+          npm -v
