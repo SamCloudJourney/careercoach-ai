@@ -11,6 +11,8 @@
 
 ## dotnet-bounty-lab
 
+- This repository is public. Treat every commit as published.
+- Standing assignment: before any hunting work, read `dotnet-bounty-lab/notes/private/hunt/HUNT-PROMPT.md` in full, then `RESUME.md` beside it. Both are private and not in git; if they are missing, ask the owner for the assignment instead of guessing.
 - Start with `dotnet-bounty-lab/README.md` and `SCOPE.md`. `scope/manifest.json` is the single source of truth for what is in scope.
 - Run `dotnet-bounty-lab/scripts/00-check-scope.sh` before relying on results: scope changes when Microsoft ships a release.
 - Never commit or publish anything under `dotnet-bounty-lab/notes/private/` or `labs/findings/` (leads, trigger inputs, probe, fuzz and audit results). Publishing before MSRC triage counts as public disclosure.
